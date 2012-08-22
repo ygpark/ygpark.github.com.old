@@ -1,10 +1,11 @@
 
-http://username.github.com/index.html
-http://username.github.com/tags.html
-http://username.github.com/sitemap.txt
-http://username.github.com/pages.html
-http://username.github.com/categories.html
-http://username.github.com/archive.html
-http://username.github.com/atom.xml
+http://ygpark.github.com/index.html
+http://ygpark.github.com/tags.html
+http://ygpark.github.com/pages/about.html
+http://ygpark.github.com/sitemap.txt
+http://ygpark.github.com/pages.html
+http://ygpark.github.com/categories.html
+http://ygpark.github.com/archive.html
+http://ygpark.github.com/atom.xml
 
-http://username.github.com/lessons/2011/12/29/jekyll-introduction
+http://ygpark.github.com/2012/08/22/what-is-this
