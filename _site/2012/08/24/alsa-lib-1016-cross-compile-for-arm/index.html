@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>alsa lib 1.0.16 cross compile for arm</title>
+    <meta name="description" content="">
+    <meta name="author" content="Young-Gi Park">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">박영기 BLOG</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>alsa lib 1.0.16 cross compile for arm <small>Supporting tagline</small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <h2 id='configure'>configure</h2>
+
+<p>첫번째 configure 에서 에러가 발생했다. <code>cannot find -lpython2.6</code> 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하다.</p>
+
+<pre><code>$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux
+
+&lt;중략&gt;
+
+/opt/arm/4.3.1-eabi-armv6/usr/bin-ccache/../lib/gcc/arm-samsung-linux-gnueabi/4.3.1/../../../../arm-samsung-linux-gnueabi/bin/ld: cannot find -lpython2.6
+collect2: ld returned 1 exit status
+make[3]: *** [smixer-python.la] 오류 1
+make[3]: Leaving directory `/home/ygpark/download/sound/alsa-lib-1.0.16/modules/mixer/simple&#39;
+make[2]: *** [all-recursive] 오류 1
+make[2]: Leaving directory `/home/ygpark/download/sound/alsa-lib-1.0.16/modules/mixer&#39;
+make[1]: *** [all-recursive] 오류 1
+make[1]: Leaving directory `/home/ygpark/download/sound/alsa-lib-1.0.16/modules&#39;
+make: *** [all-recursive] 오류 1</code></pre>
+<br /><br />
+<p>tool-chain에 libpython이 없나보다. python을 안쓰는 방향으로 해법을 찾아보았다.</p>
+
+<pre><code>$ ./configure --help | grep python
+  --disable-python        disable the python components
+  --with-pythonlibs=ldflags
+                          specify python libraries (-lpthread -lm -ldl
+                          -lpython2.4)
+  --with-pythonincludes=Cflags
+                          specify python C header files
+                          (-I/usr/include/python)</code></pre>
+<br /><br />
+<p>다행히 configure의 help에서 <code>--disable-python</code>이란게 나왔다. 다시 configure 시도한다.</p>
+
+<pre><code>$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux --disable-python
+$ make</code></pre>
+
+<p>컴파일이 모두 완료되었다. 컴파일된 결과물은 <code>./src/.libs/</code> 에 존재한다.</p>
+
+<h2 id='id25'>참고</h2>
+
+<ul>
+<li><a href='http://omappedia.org/wiki/ALSA_Setup#ALSA_library'>http://omappedia.org/wiki/ALSA_Setup#ALSA_library</a></li>
+</ul>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev disabled"><a>&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2012/08/24/bash-find-xargs-grep" title="bash에서 검색하기">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>24 August 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#alsa-ref">alsa <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#arm-ref">arm <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#cross-compile-ref">cross-compile <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Young-Gi Park 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

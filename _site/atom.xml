@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>나는 개발자다</title>
+ <title>박영기 BLOG</title>
  <link href="http://ygpark.github.com/atom.xml" rel="self"/>
  <link href="http://ygpark.github.com"/>
- <updated>2012-08-22T11:10:18+09:00</updated>
+ <updated>2012-08-24T17:41:59+09:00</updated>
  <id>http://ygpark.github.com</id>
  <author>
    <name>Young-Gi Park</name>
@@ -13,11 +13,169 @@
 
  
  <entry>
-   <title>What is this?</title>
-   <link href="http://ygpark.github.com/2012/08/22/what-is-this"/>
-   <updated>2012-08-22T00:00:00+09:00</updated>
-   <id>http://ygpark.github.com/2012/08/22/what-is-this</id>
-   <content type="html">&lt;p&gt;한글 테스트&lt;/p&gt;</content>
+   <title>Makefile 예제</title>
+   <link href="http://ygpark.github.com/2012/08/24/makefile-example"/>
+   <updated>2012-08-24T00:00:00+09:00</updated>
+   <id>http://ygpark.github.com/2012/08/24/makefile-example</id>
+   <content type="html">&lt;h2 id='1_application'&gt;예제1. Application&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;CXX=g++
+CFLAGS=-c -Wall
+LDFLAGS=
+SOURCES=main.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=a.out
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CXX) $(CFLAGS) $&amp;lt; -o $@
+
+clean:
+	rm -f $(OBJECTS)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='2_application__c_cpp_'&gt;예제2. Application - C와 CPP 복합&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;CC=gcc
+CXX=g++
+
+CFLAGS=-c -Wall
+LDFLAGS=-lpthread
+
+SOURCES=main.cpp VoiceSound2.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+SOURCES_C=sound/mixer.c sound/player.c
+OBJECTS_C=$(SOURCES_C:.c=.o)
+
+EXECUTABLE=test
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS) $(OBJECTS_C)
+	$(CXX) $(LDFLAGS) $(OBJECTS) $(OBJECTS_C) -o $@
+
+.cpp.o:
+	$(CXX) $(CFLAGS) $&amp;lt; -o $@
+	
+.c.o:
+	$(CC) $(CFLAGS) $&amp;lt; -o $@
+
+clean:
+	rm -f $(OBJECTS) $(OBJECTS_C)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='3_static_library'&gt;예제3. static library&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;CC=g++
+CFLAGS=-c -Wall
+SOURCES=GPSReader.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+TARGET=libnd100s
+
+all: $(SOURCES) $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	ar cr $(TARGET).a $(OBJECTS)
+
+.cpp.o:
+	$(CC) $(CFLAGS) $&amp;lt; -o $@
+
+clean:
+	rm -f $(OBJECTS) $(TARGET).a&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Linux: CPU scaling governor</title>
+   <link href="http://ygpark.github.com/2012/08/24/linux-cpu-scaling-governor"/>
+   <updated>2012-08-24T00:00:00+09:00</updated>
+   <id>http://ygpark.github.com/2012/08/24/linux-cpu-scaling-governor</id>
+   <content type="html">&lt;h2 id='cpu_'&gt;CPU 정보&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cat /proc/cpuinfo&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='2__'&gt;2번째 코어 살리기&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;echo 1 &amp;gt; /sys/devices/system/cpu/cpu1/online 
+grep &amp;quot;processor&amp;quot; /proc/cpuinfo&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>bash에서 검색하기</title>
+   <link href="http://ygpark.github.com/2012/08/24/bash-find-xargs-grep"/>
+   <updated>2012-08-24T00:00:00+09:00</updated>
+   <id>http://ygpark.github.com/2012/08/24/bash-find-xargs-grep</id>
+   <content type="html">&lt;h1 id='find_xargs_grep_'&gt;find, xargs, grep의 조합&lt;/h1&gt;
+
+&lt;p&gt;리눅스에서 검색을 할 때 find, xargs, grep을 조합해서 쓰는것을 추천한다. 원하는 파일만 골라서 검색할 수 있기 때문이다.&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;p&gt;기본적인 사용법은 다음과 같다:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;find . -name &amp;lt;파일명&amp;gt; | xargs grep --color -n &amp;lt;검색어&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;p&gt;리눅스 커널을 개발하는 경우는 아래와 같은 스크립트로 소스코드를 검색한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+# grep-kernel.sh
+
+find . -name &amp;quot;*.[chSs]&amp;quot; -o -name &amp;quot;*.cpp&amp;quot; -o -name &amp;quot;Makefile&amp;quot; -o -name &amp;quot;.config&amp;quot; | xargs grep --color -n $1&lt;/code&gt;&lt;/pre&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;p&gt;혹은 이렇게 Kconfig를 검색하기도 한다:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+# grep-kconfig.sh
+
+find . -name Kconfig | xargs grep --color -n $1&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>alsa lib 1.0.16 cross compile for arm</title>
+   <link href="http://ygpark.github.com/2012/08/24/alsa-lib-1016-cross-compile-for-arm"/>
+   <updated>2012-08-24T00:00:00+09:00</updated>
+   <id>http://ygpark.github.com/2012/08/24/alsa-lib-1016-cross-compile-for-arm</id>
+   <content type="html">&lt;h2 id='configure'&gt;configure&lt;/h2&gt;
+
+&lt;p&gt;첫번째 configure 에서 에러가 발생했다. &lt;code&gt;cannot find -lpython2.6&lt;/code&gt; 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux
+
+&amp;lt;중략&amp;gt;
+
+/opt/arm/4.3.1-eabi-armv6/usr/bin-ccache/../lib/gcc/arm-samsung-linux-gnueabi/4.3.1/../../../../arm-samsung-linux-gnueabi/bin/ld: cannot find -lpython2.6
+collect2: ld returned 1 exit status
+make[3]: *** [smixer-python.la] 오류 1
+make[3]: Leaving directory `/home/ygpark/download/sound/alsa-lib-1.0.16/modules/mixer/simple&amp;#39;
+make[2]: *** [all-recursive] 오류 1
+make[2]: Leaving directory `/home/ygpark/download/sound/alsa-lib-1.0.16/modules/mixer&amp;#39;
+make[1]: *** [all-recursive] 오류 1
+make[1]: Leaving directory `/home/ygpark/download/sound/alsa-lib-1.0.16/modules&amp;#39;
+make: *** [all-recursive] 오류 1&lt;/code&gt;&lt;/pre&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;p&gt;tool-chain에 libpython이 없나보다. python을 안쓰는 방향으로 해법을 찾아보았다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ./configure --help | grep python
+  --disable-python        disable the python components
+  --with-pythonlibs=ldflags
+                          specify python libraries (-lpthread -lm -ldl
+                          -lpython2.4)
+  --with-pythonincludes=Cflags
+                          specify python C header files
+                          (-I/usr/include/python)&lt;/code&gt;&lt;/pre&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;p&gt;다행히 configure의 help에서 &lt;code&gt;--disable-python&lt;/code&gt;이란게 나왔다. 다시 configure 시도한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux --disable-python
+$ make&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;컴파일이 모두 완료되었다. 컴파일된 결과물은 &lt;code&gt;./src/.libs/&lt;/code&gt; 에 존재한다.&lt;/p&gt;
+
+&lt;h2 id='id25'&gt;참고&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://omappedia.org/wiki/ALSA_Setup#ALSA_library'&gt;http://omappedia.org/wiki/ALSA_Setup#ALSA_library&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
  </entry>
  
  

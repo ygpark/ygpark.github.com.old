@@ -8,4 +8,7 @@ http://ygpark.github.com/categories.html
 http://ygpark.github.com/archive.html
 http://ygpark.github.com/atom.xml
 
-http://ygpark.github.com/2012/08/22/what-is-this
+http://ygpark.github.com/2012/08/24/makefile-example
+http://ygpark.github.com/2012/08/24/linux-cpu-scaling-governor
+http://ygpark.github.com/2012/08/24/bash-find-xargs-grep
+http://ygpark.github.com/2012/08/24/alsa-lib-1016-cross-compile-for-arm

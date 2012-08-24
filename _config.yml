@@ -9,7 +9,7 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : 나는 개발자다
+title : 박영기 BLOG
 tagline: Site Tagline
 author :
   name : Young-Gi Park

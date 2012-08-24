@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>What is this?</title>
+    <title>Linux: CPU scaling governor</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
@@ -30,7 +30,7 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="/">나는 개발자다</a>
+          <a class="brand" href="/">박영기 BLOG</a>
           <ul class="nav">
             
             
@@ -99,21 +99,28 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>What is this? <small>Supporting tagline</small></h1>
+  <h1>Linux: CPU scaling governor <small>Supporting tagline</small></h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>한글 테스트</p>
+    <h2 id='cpu_'>CPU 정보</h2>
+
+<pre><code>cat /proc/cpuinfo</code></pre>
+
+<h2 id='2__'>2번째 코어 살리기</h2>
+
+<pre><code>echo 1 &gt; /sys/devices/system/cpu/cpu1/online 
+grep &quot;processor&quot; /proc/cpuinfo</code></pre>
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <li class="prev"><a href="/2012/08/24/bash-find-xargs-grep" title="bash에서 검색하기">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next disabled"><a>Next &rarr;</a>
+        <li class="next"><a href="/2012/08/24/makefile-example" title="Makefile 예제">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -143,7 +150,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>22 August 2012</span></div>
+    <div class="date"><span>24 August 2012</span></div>
 
     
   </div>
