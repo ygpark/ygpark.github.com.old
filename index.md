@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Secret
+title: 대문
 ---
 {% include JB/setup %}
 
