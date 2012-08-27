@@ -2,8 +2,8 @@
 layout: post
 title: "bash에서 검색하기"
 description: ""
-category: 
-tags: [find, xargs, grep]
+category: Linux
+tags: [Linux, find, xargs, grep]
 ---
 {% include JB/setup %}
 

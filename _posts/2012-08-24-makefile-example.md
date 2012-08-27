@@ -2,8 +2,8 @@
 layout: post
 title: "Makefile 예제"
 description: ""
-category: 
-tags: [Makefile]
+category: Linux
+tags: [Makefile, Linux]
 ---
 {% include JB/setup %}
 

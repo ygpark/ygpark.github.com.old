@@ -2,8 +2,8 @@
 layout: post
 title: "Linux: CPU scaling governor"
 description: ""
-category: 
-tags: []
+category: Linux
+tags: [Linux, cpu]
 ---
 {% include JB/setup %}
 

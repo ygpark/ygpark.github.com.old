@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Linux: CPU scaling governor</title>
+    <title>Makefile 예제</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
@@ -32,31 +32,17 @@
         <div class="container">
           <a class="brand" href="/">박영기 BLOG</a>
           <ul class="nav">
+            <li><a href="atom.xml"><img src="images/rss.gif"/></a></li>
+            <li><a href="archive.html">Archive</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="tags.html">Tags</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+	<!--
             
             
             
 
 
-  
-    
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories.html">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
   
     
       
@@ -72,9 +58,9 @@
   
     
       
-      	
-      	<li><a href="/archive.html">Archive</a></li>
-      	
+    
+  
+    
       
     
   
@@ -86,9 +72,29 @@
       
     
   
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
 
 
-
+ -->
           </ul>
         </div>
       </div>
@@ -99,28 +105,88 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Linux: CPU scaling governor <small>Supporting tagline</small></h1>
+  <h1>Makefile 예제 <!-- <small>Supporting tagline</small>--></h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <h2 id='cpu_'>CPU 정보</h2>
+    <h2 id='1_application'>예제1. Application</h2>
 
-<pre><code>cat /proc/cpuinfo</code></pre>
+<pre><code>CXX=g++
+CFLAGS=-c -Wall
+LDFLAGS=
+SOURCES=main.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=a.out
 
-<h2 id='2__'>2번째 코어 살리기</h2>
+all: $(SOURCES) $(EXECUTABLE)
 
-<pre><code>echo 1 &gt; /sys/devices/system/cpu/cpu1/online 
-grep &quot;processor&quot; /proc/cpuinfo</code></pre>
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CXX) $(CFLAGS) $&lt; -o $@
+
+clean:
+	rm -f $(OBJECTS)</code></pre>
+
+<h2 id='2_application__c_cpp_'>예제2. Application - C와 CPP 복합</h2>
+
+<pre><code>CC=gcc
+CXX=g++
+
+CFLAGS=-c -Wall
+LDFLAGS=-lpthread
+
+SOURCES=main.cpp VoiceSound2.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+
+SOURCES_C=sound/mixer.c sound/player.c
+OBJECTS_C=$(SOURCES_C:.c=.o)
+
+EXECUTABLE=test
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS) $(OBJECTS_C)
+	$(CXX) $(LDFLAGS) $(OBJECTS) $(OBJECTS_C) -o $@
+
+.cpp.o:
+	$(CXX) $(CFLAGS) $&lt; -o $@
+	
+.c.o:
+	$(CC) $(CFLAGS) $&lt; -o $@
+
+clean:
+	rm -f $(OBJECTS) $(OBJECTS_C)</code></pre>
+
+<h2 id='3_static_library'>예제3. static library</h2>
+
+<pre><code>CC=g++
+CFLAGS=-c -Wall
+SOURCES=GPSReader.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+TARGET=libnd100s
+
+all: $(SOURCES) $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	ar cr $(TARGET).a $(OBJECTS)
+
+.cpp.o:
+	$(CC) $(CFLAGS) $&lt; -o $@
+
+clean:
+	rm -f $(OBJECTS) $(TARGET).a</code></pre>
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2012/08/24/bash-find-xargs-grep" title="bash에서 검색하기">&larr; Previous</a></li>
+        <li class="prev"><a href="/Linux/2012/08/24/linux-cpu-scaling-governor" title="Linux: CPU scaling governor">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/2012/08/24/makefile-example" title="Makefile 예제">Next &rarr;</a></li>
+        <li class="next"><a href="/Linux/2012/08/27/gdb-manual" title="gdb 매뉴얼 - core dump 사용하기">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -152,6 +218,24 @@ grep &quot;processor&quot; /proc/cpuinfo</code></pre>
     <h4>Published</h4>
     <div class="date"><span>24 August 2012</span></div>
 
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#Makefile-ref">Makefile <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Linux-ref">Linux <span>5</span></a></li>
+    
+  
+
+
+
+    </ul>
     
   </div>
 </div>

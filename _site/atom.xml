@@ -4,7 +4,7 @@
  <title>박영기 BLOG</title>
  <link href="http://ygpark.github.com/atom.xml" rel="self"/>
  <link href="http://ygpark.github.com"/>
- <updated>2012-08-27T02:54:10+09:00</updated>
+ <updated>2012-08-27T19:47:59+09:00</updated>
  <id>http://ygpark.github.com</id>
  <author>
    <name>Young-Gi Park</name>
@@ -13,10 +13,74 @@
 
  
  <entry>
+   <title>gdb 매뉴얼 - core dump 사용하기</title>
+   <link href="http://ygpark.github.com/Linux/2012/08/27/gdb-manual"/>
+   <updated>2012-08-27T00:00:00+09:00</updated>
+   <id>http://ygpark.github.com/Linux/2012/08/27/gdb-manual</id>
+   <content type="html">&lt;p&gt;core dump란 충돌이 발생했던 순간의 memory를 저장한 파일을 말한다. gdb는 core dump 파일을 불러와서 디버깅을 하는 기능을 제공한다. 하지만 그전에 core dump가 저장될 수 있도록 하는 설정이 필요하다.&lt;/p&gt;
+
+&lt;h2 id='id93'&gt;준비작업&lt;/h2&gt;
+
+&lt;p&gt;core dump가 저장될 수 있도록 하는 설정은 &lt;code&gt;ulimit&lt;/code&gt; 명령을 사용한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 20
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 16382
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) unlimited
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ulimit -a&lt;/code&gt;의 출력을 보면, 기본적으로 core file size가 0으로 잡혀있는 것을 확인할 수 있다. 이 상태에서는 core dump 파일이 생성되지 않는다. 따라서 core file size를 설정해 주어야 한다. 여기서는 unlimited로 설정한다.&lt;/p&gt;
+
+&lt;p&gt;설정은 &lt;code&gt;ulimit -c unlimited&lt;/code&gt; 명령으로 한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ulimit -c unlimited
+
+$ ulimit -a
+core file size          (blocks, -c) unlimited
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 20
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 16382
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) unlimited
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위와 같이 설정이 되었다면, 프로그램이 죽을 때 현재 디렉토리($PWD)에 core dump 파일이 생긴다.&lt;/p&gt;
+
+&lt;h2 id='id94'&gt;사용법&lt;/h2&gt;
+
+&lt;p&gt;core dump를 이용한 디버깅 방법은 다음과 같다:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gdb [프로그램명] [덤프파일명]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;gdb는 실행직후 core dump 파일을 로드하여 종료 직전의 메모리 상태를 만든다. 이 때 bt(backtrace)같은 gdb의 명령어셋을 사용하여 디버깅을 시작한다.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Makefile 예제</title>
-   <link href="http://ygpark.github.com/2012/08/24/makefile-example"/>
+   <link href="http://ygpark.github.com/Linux/2012/08/24/makefile-example"/>
    <updated>2012-08-24T00:00:00+09:00</updated>
-   <id>http://ygpark.github.com/2012/08/24/makefile-example</id>
+   <id>http://ygpark.github.com/Linux/2012/08/24/makefile-example</id>
    <content type="html">&lt;h2 id='1_application'&gt;예제1. Application&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;CXX=g++
@@ -89,9 +153,9 @@ clean:
  
  <entry>
    <title>Linux: CPU scaling governor</title>
-   <link href="http://ygpark.github.com/2012/08/24/linux-cpu-scaling-governor"/>
+   <link href="http://ygpark.github.com/Linux/2012/08/24/linux-cpu-scaling-governor"/>
    <updated>2012-08-24T00:00:00+09:00</updated>
-   <id>http://ygpark.github.com/2012/08/24/linux-cpu-scaling-governor</id>
+   <id>http://ygpark.github.com/Linux/2012/08/24/linux-cpu-scaling-governor</id>
    <content type="html">&lt;h2 id='cpu_'&gt;CPU 정보&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;cat /proc/cpuinfo&lt;/code&gt;&lt;/pre&gt;
@@ -104,9 +168,9 @@ grep &amp;quot;processor&amp;quot; /proc/cpuinfo&lt;/code&gt;&lt;/pre&gt;</conte
  
  <entry>
    <title>bash에서 검색하기</title>
-   <link href="http://ygpark.github.com/2012/08/24/bash-find-xargs-grep"/>
+   <link href="http://ygpark.github.com/Linux/2012/08/24/bash-find-xargs-grep"/>
    <updated>2012-08-24T00:00:00+09:00</updated>
-   <id>http://ygpark.github.com/2012/08/24/bash-find-xargs-grep</id>
+   <id>http://ygpark.github.com/Linux/2012/08/24/bash-find-xargs-grep</id>
    <content type="html">&lt;h1 id='find_xargs_grep_'&gt;find, xargs, grep의 조합&lt;/h1&gt;
 
 &lt;p&gt;리눅스에서 검색을 할 때 find, xargs, grep을 조합해서 쓰는것을 추천한다. 원하는 파일만 골라서 검색할 수 있기 때문이다.&lt;/p&gt;
@@ -131,10 +195,10 @@ find . -name Kconfig | xargs grep --color -n $1&lt;/code&gt;&lt;/pre&gt;</conten
  </entry>
  
  <entry>
-   <title>alsa lib 1.0.16 cross compile for arm</title>
-   <link href="http://ygpark.github.com/2012/08/24/alsa-lib-1016-cross-compile-for-arm"/>
+   <title>alsa-lib-1.0.16 cross compile for arm</title>
+   <link href="http://ygpark.github.com/Linux/2012/08/24/alsa-lib-1016-cross-compile-for-arm"/>
    <updated>2012-08-24T00:00:00+09:00</updated>
-   <id>http://ygpark.github.com/2012/08/24/alsa-lib-1016-cross-compile-for-arm</id>
+   <id>http://ygpark.github.com/Linux/2012/08/24/alsa-lib-1016-cross-compile-for-arm</id>
    <content type="html">&lt;h2 id='configure'&gt;configure&lt;/h2&gt;
 
 &lt;p&gt;첫번째 configure 에서 에러가 발생했다. &lt;code&gt;cannot find -lpython2.6&lt;/code&gt; 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하다.&lt;/p&gt;
@@ -171,7 +235,7 @@ $ make&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;컴파일이 모두 완료되었다. 컴파일된 결과물은 &lt;code&gt;./src/.libs/&lt;/code&gt; 에 존재한다.&lt;/p&gt;
 
-&lt;h2 id='id70'&gt;참고&lt;/h2&gt;
+&lt;h2 id='id92'&gt;참고&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='http://omappedia.org/wiki/ALSA_Setup#ALSA_library'&gt;http://omappedia.org/wiki/ALSA_Setup#ALSA_library&lt;/a&gt;&lt;/li&gt;

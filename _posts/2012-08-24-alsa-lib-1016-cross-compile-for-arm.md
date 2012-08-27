@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "alsa lib 1.0.16 cross compile for arm"
+title: "alsa-lib-1.0.16 cross compile for arm"
 description: ""
-category: 
-tags: [alsa, arm, cross-compile]
+category: Linux
+tags: [Linux, alsa, arm, cross-compile]
 ---
 {% include JB/setup %}
 
