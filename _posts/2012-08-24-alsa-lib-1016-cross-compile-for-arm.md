@@ -8,7 +8,19 @@ tags: [Linux, alsa, arm, cross-compile]
 {% include JB/setup %}
 
 
-## configure
+## 방법
+
+	$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux
+	$ make
+
+만약, libpython이 없다면:
+
+	$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux --disable-python
+	$ make
+
+
+
+## 경험담
 
 
 첫번째 configure 에서 에러가 발생했다. `cannot find -lpython2.6` 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하다. 

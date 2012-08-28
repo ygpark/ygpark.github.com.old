@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>alsa-lib-1.0.16 cross compile for arm</title>
+    <title>gitweb for ubuntu</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
@@ -105,71 +105,27 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>alsa-lib-1.0.16 cross compile for arm <!-- <small>Supporting tagline</small>--></h1>
+  <h1>gitweb for ubuntu <!-- <small>Supporting tagline</small>--></h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <h2 id='id1'>방법</h2>
-
-<pre><code>$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux
-$ make</code></pre>
-
-<p>만약, libpython이 없다면:</p>
-
-<pre><code>$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux --disable-python
-$ make</code></pre>
-
-<h2 id='id2'>경험담</h2>
-
-<p>첫번째 configure 에서 에러가 발생했다. <code>cannot find -lpython2.6</code> 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하다.</p>
-
-<pre><code>$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux
-
-&lt;중략&gt;
-
-/opt/arm/4.3.1-eabi-armv6/usr/bin-ccache/../lib/gcc/arm-samsung-linux-gnueabi/4.3.1/../../../../arm-samsung-linux-gnueabi/bin/ld: cannot find -lpython2.6
-collect2: ld returned 1 exit status
-make[3]: *** [smixer-python.la] 오류 1
-make[3]: Leaving directory `/home/ygpark/download/sound/alsa-lib-1.0.16/modules/mixer/simple&#39;
-make[2]: *** [all-recursive] 오류 1
-make[2]: Leaving directory `/home/ygpark/download/sound/alsa-lib-1.0.16/modules/mixer&#39;
-make[1]: *** [all-recursive] 오류 1
-make[1]: Leaving directory `/home/ygpark/download/sound/alsa-lib-1.0.16/modules&#39;
-make: *** [all-recursive] 오류 1</code></pre>
-<br /><br />
-<p>tool-chain에 libpython이 없나보다. python을 안쓰는 방향으로 해법을 찾아보았다.</p>
-
-<pre><code>$ ./configure --help | grep python
-  --disable-python        disable the python components
-  --with-pythonlibs=ldflags
-                          specify python libraries (-lpthread -lm -ldl
-                          -lpython2.4)
-  --with-pythonincludes=Cflags
-                          specify python C header files
-                          (-I/usr/include/python)</code></pre>
-<br /><br />
-<p>다행히 configure의 help에서 <code>--disable-python</code>이란게 나왔다. 다시 configure 시도한다.</p>
-
-<pre><code>$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux --disable-python
-$ make</code></pre>
-
-<p>컴파일이 모두 완료되었다. 컴파일된 결과물은 <code>./src/.libs/</code> 에 존재한다.</p>
-
-<h2 id='id3'>참고</h2>
+    <h2 id='id6'>참조</h2>
 
 <ul>
-<li><a href='http://omappedia.org/wiki/ALSA_Setup#ALSA_library'>http://omappedia.org/wiki/ALSA_Setup#ALSA_library</a></li>
+<li>http://wiki.kldp.org/wiki.php/gitweb</li>
+
+<li>http://kldp.org/node/100726</li>
 </ul>
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <li class="prev"><a href="/Linux Kernel/2012/08/28/creating-new-linux-kernel-defconfig" title="Linux Kernel - 새 defconfig 만들기">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/Linux/2012/08/24/bash-find-xargs-grep" title="bash에서 검색하기">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a>
       
       </ul>
     </div>
@@ -199,7 +155,7 @@ $ make</code></pre>
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>24 August 2012</span></div>
+    <div class="date"><span>28 August 2012</span></div>
 
   
     <h4>Tags</h4>
@@ -210,13 +166,13 @@ $ make</code></pre>
 
   
      
-    	<li><a href="/tags.html#Linux-ref">Linux <span>5</span></a></li>
+    	<li><a href="/tags.html#git-ref">git <span>1</span></a></li>
      
-    	<li><a href="/tags.html#alsa-ref">alsa <span>1</span></a></li>
+    	<li><a href="/tags.html#gitweb-ref">gitweb <span>1</span></a></li>
      
-    	<li><a href="/tags.html#arm-ref">arm <span>1</span></a></li>
+    	<li><a href="/tags.html#linux-ref">linux <span>2</span></a></li>
      
-    	<li><a href="/tags.html#cross-compile-ref">cross-compile <span>1</span></a></li>
+    	<li><a href="/tags.html#ubuntu-ref">ubuntu <span>1</span></a></li>
     
   
 
