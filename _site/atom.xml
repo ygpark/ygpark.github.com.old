@@ -4,7 +4,7 @@
  <title>박영기 BLOG</title>
  <link href="http://ygpark.github.com/atom.xml" rel="self"/>
  <link href="http://ygpark.github.com"/>
- <updated>2012-08-28T20:10:49+09:00</updated>
+ <updated>2012-08-28T20:14:13+09:00</updated>
  <id>http://ygpark.github.com</id>
  <author>
    <name>Young-Gi Park</name>
@@ -46,7 +46,7 @@ $
 $ ln -s /path/to/repo2/.git repo2.git
 $ ln -s /path/to/repo3/.git repo3.git&lt;/code&gt;&lt;/pre&gt;
 &lt;br /&gt;&lt;br /&gt;
-&lt;h3 id='id611'&gt;참조&lt;/h3&gt;
+&lt;h3 id='id617'&gt;참조&lt;/h3&gt;
 &lt;br /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='http://wiki.kldp.org/wiki.php/gitweb'&gt;http://wiki.kldp.org/wiki.php/gitweb&lt;/a&gt;&lt;/li&gt;
@@ -81,7 +81,7 @@ $ make&lt;/code&gt;&lt;/pre&gt;
    <id>http://ygpark.github.com/Linux/2012/08/27/gdb-manual</id>
    <content type="html">&lt;p&gt;core dump란 충돌이 발생했던 순간의 memory를 저장한 파일을 말한다. gdb는 core dump 파일을 불러와서 디버깅을 하는 기능을 제공한다. 하지만 그전에 core dump가 저장될 수 있도록 하는 설정이 필요하다.&lt;/p&gt;
 
-&lt;h2 id='id609'&gt;준비작업&lt;/h2&gt;
+&lt;h2 id='id615'&gt;준비작업&lt;/h2&gt;
 
 &lt;p&gt;core dump가 저장될 수 있도록 하는 설정은 &lt;code&gt;ulimit&lt;/code&gt; 명령을 사용한다.&lt;/p&gt;
 
@@ -129,7 +129,7 @@ file locks                      (-x) unlimited&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;위와 같이 설정이 되었다면, 프로그램이 죽을 때 현재 디렉토리($PWD)에 core dump 파일이 생긴다.&lt;/p&gt;
 
-&lt;h2 id='id610'&gt;사용법&lt;/h2&gt;
+&lt;h2 id='id616'&gt;사용법&lt;/h2&gt;
 
 &lt;p&gt;core dump를 이용한 디버깅 방법은 다음과 같다:&lt;/p&gt;
 
@@ -261,7 +261,7 @@ find . -name Kconfig | xargs grep --color -n $1&lt;/code&gt;&lt;/pre&gt;</conten
    <link href="http://ygpark.github.com/Linux/2012/08/24/alsa-lib-1016-cross-compile-for-arm"/>
    <updated>2012-08-24T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux/2012/08/24/alsa-lib-1016-cross-compile-for-arm</id>
-   <content type="html">&lt;h3 id='id606'&gt;방법&lt;/h3&gt;
+   <content type="html">&lt;h3 id='id612'&gt;방법&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux
 $ make&lt;/code&gt;&lt;/pre&gt;
@@ -271,7 +271,7 @@ $ make&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux --disable-python
 $ make&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id='id607'&gt;경험담&lt;/h3&gt;
+&lt;h3 id='id613'&gt;경험담&lt;/h3&gt;
 
 &lt;p&gt;첫번째 configure 에서 에러가 발생했다. &lt;code&gt;cannot find -lpython2.6&lt;/code&gt; 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하다.&lt;/p&gt;
 
@@ -307,7 +307,7 @@ $ make&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;컴파일이 모두 완료되었다. 컴파일된 결과물은 &lt;code&gt;./src/.libs/&lt;/code&gt; 에 존재한다.&lt;/p&gt;
 
-&lt;h3 id='id608'&gt;참고&lt;/h3&gt;
+&lt;h3 id='id614'&gt;참고&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='http://omappedia.org/wiki/ALSA_Setup#ALSA_library'&gt;http://omappedia.org/wiki/ALSA_Setup#ALSA_library&lt;/a&gt;&lt;/li&gt;
