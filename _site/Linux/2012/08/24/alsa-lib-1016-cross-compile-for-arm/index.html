@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>alsa-lib-1.0.16 cross compile for arm</title>
+    <title>박영기 BLOG :: alsa-lib-1.0.16 cross compile for arm</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
@@ -44,8 +44,6 @@
 
 
   
-    
-      
     
   
     
@@ -110,7 +108,7 @@
 
 <div class="row">
   <div class="span8">
-    <h2 id='id1'>방법</h2>
+    <h3 id='id606'>방법</h3>
 
 <pre><code>$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux
 $ make</code></pre>
@@ -120,7 +118,7 @@ $ make</code></pre>
 <pre><code>$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux --disable-python
 $ make</code></pre>
 
-<h2 id='id2'>경험담</h2>
+<h3 id='id607'>경험담</h3>
 
 <p>첫번째 configure 에서 에러가 발생했다. <code>cannot find -lpython2.6</code> 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하다.</p>
 
@@ -156,7 +154,7 @@ $ make</code></pre>
 
 <p>컴파일이 모두 완료되었다. 컴파일된 결과물은 <code>./src/.libs/</code> 에 존재한다.</p>
 
-<h2 id='id3'>참고</h2>
+<h3 id='id608'>참고</h3>
 
 <ul>
 <li><a href='http://omappedia.org/wiki/ALSA_Setup#ALSA_library'>http://omappedia.org/wiki/ALSA_Setup#ALSA_library</a></li>

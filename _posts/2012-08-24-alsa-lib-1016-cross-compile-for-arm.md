@@ -8,7 +8,7 @@ tags: [Linux, alsa, arm, cross-compile]
 {% include JB/setup %}
 
 
-## 방법
+### 방법
 
 	$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux
 	$ make
@@ -20,7 +20,7 @@ tags: [Linux, alsa, arm, cross-compile]
 
 
 
-## 경험담
+### 경험담
 
 
 첫번째 configure 에서 에러가 발생했다. `cannot find -lpython2.6` 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하다. 
@@ -67,7 +67,7 @@ tool-chain에 libpython이 없나보다. python을 안쓰는 방향으로 해법
 컴파일이 모두 완료되었다. 컴파일된 결과물은 `./src/.libs/` 에 존재한다.
 
 
-## 참고
+### 참고
 
 - [http://omappedia.org/wiki/ALSA_Setup#ALSA_library](http://omappedia.org/wiki/ALSA_Setup#ALSA_library)
 

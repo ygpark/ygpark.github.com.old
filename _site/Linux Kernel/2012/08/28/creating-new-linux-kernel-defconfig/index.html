@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Linux Kernel - 새 defconfig 만들기</title>
+    <title>박영기 BLOG :: Linux Kernel - 새 defconfig 만들기</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
@@ -44,8 +44,6 @@
 
 
   
-    
-      
     
   
     
@@ -110,7 +108,18 @@
 
 <div class="row">
   <div class="span8">
-    <pre><code>$ cp .config arch/arm/configs/my_defconfig</code></pre>
+    <p>대부분의 리눅스 커널을 개발할 때 최초에 아래와 같은 명령으로 컴파일하는것을 볼 수 있다. 이 명령들 중 make xxx_defconfig 는 해당 타겟용으로 미리 정의된 .config 파일을 커널의 루트 디렉토리로 복사하는 용도로 사용된다.</p>
+
+<pre><code>$ make xxx_defconfig
+$ make</code></pre>
+
+<p>이것은 어떻게 가능한 것인가?</p>
+
+<p>먼저 make menuconfig 명령으로 .config파일을 만든다. 그리고나서 아래처럼 arch/arm/configs/ 디렉토리에 복사하면 끝난다.</p>
+
+<pre><code>$ cp .config arch/arm/configs/product_defconfig</code></pre>
+
+<p>이제 마음놓고 make distclean 명령을 내릴 수 있다. :D</p>
     <hr>
     <div class="pagination">
       <ul>

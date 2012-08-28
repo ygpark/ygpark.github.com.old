@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Linux: CPU scaling governor</title>
+    <title>박영기 BLOG :: Linux: CPU scaling governor</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
@@ -44,8 +44,6 @@
 
 
   
-    
-      
     
   
     
@@ -110,11 +108,11 @@
 
 <div class="row">
   <div class="span8">
-    <h2 id='cpu_'>CPU 정보</h2>
+    <h3 id='cpu_'>CPU 정보</h3>
 
 <pre><code>cat /proc/cpuinfo</code></pre>
 
-<h2 id='2__'>2번째 코어 살리기</h2>
+<h3 id='2__'>2번째 코어 살리기</h3>
 
 <pre><code>echo 1 &gt; /sys/devices/system/cpu/cpu1/online 
 grep &quot;processor&quot; /proc/cpuinfo</code></pre>
