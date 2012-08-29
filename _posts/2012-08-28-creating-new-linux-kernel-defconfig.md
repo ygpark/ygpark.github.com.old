@@ -7,15 +7,16 @@ tags: [linux, kernel, defconfig]
 ---
 {% include JB/setup %}
 
-대부분의 리눅스 커널을 개발할 때 최초에 아래와 같은 명령으로 컴파일하는것을 볼 수 있다. 이 명령들 중 make xxx_defconfig 는 해당 타겟용으로 미리 정의된 .config 파일을 커널의 루트 디렉토리로 복사하는 용도로 사용된다.
+초보 리눅스커널 개발자에게 유용한 팁입니다.
+
+우리는 커널 빌드할 때 **make xxx_defconfig** 같은 명령을 입력합니다. 이 명령의 의미는 '미리 만들어 놓은 **.config** 파일을 사용하라' 입니다.
 
 	$ make xxx_defconfig
 	$ make
 
-이것은 어떻게 가능한 것인가? 
+내 커널소스도 이렇게 만들고 싶은데 어떻게 해야할까요? 먼저 커널소스의 루트디렉토리에서 지금 쓰고있는 **.config**를 찾습니다. 그리고 그것을 **arch/arm/configs/** 디렉토리에 복사합니다. 이게 다에요. 다음엔 그냥 **make xxx_defconfig** 명령을 사용하기만 하면 됩니다.
 
-먼저 make menuconfig 명령으로 .config파일을 만든다. 그리고나서 아래처럼 arch/arm/configs/ 디렉토리에 복사하면 끝난다.
+	$ cp .config arch/arm/configs/xxx_defconfig
+	$ make xxx_defconfig
 
-	$ cp .config arch/arm/configs/product_defconfig
-
-이제 마음놓고 make distclean 명령을 내릴 수 있다. :D
+이제 마음놓고 옵션들을 바꿀 수 있고 되돌릴 수도 있습니다. make distclean 같은 명령도 내릴 수 있죠. :D

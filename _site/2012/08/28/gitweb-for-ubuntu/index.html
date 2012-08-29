@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>박영기 BLOG :: gitweb for ubuntu</title>
+    <title>gitweb for ubuntu - 박영기 BLOG</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
-    <meta http-equiv="Expires" content="0"/> 
+    <meta http-equiv="Expires" content="-1"/> 
     <meta http-equiv="Pragma" content="no-cache"/>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -46,6 +46,8 @@
 
 
   
+    
+      
     
   
     
@@ -111,8 +113,8 @@
 <div class="row">
   <div class="span8">
     <h3 id='gitweb_'>gitweb 설치</h3>
-<br />
-<p>다음을 입력하면 웹으로 gitweb에 접근할 수 있다.</p>
+
+<p>이렇게 입력하면 웹으로 gitweb에 접근할 수 있다.</p>
 
 <pre><code>$ sudo apt-get install apache2 git-core gitweb
 $
@@ -120,16 +122,16 @@ $ cd /var/www/
 $ mkdir gitweb
 $ cd gitweb
 $ ln -s /usr/share/gitweb/* .</code></pre>
-<br /><br />
+
 <h3 id='_'>프로젝트 설정</h3>
-<br />
+
 <p>다음으로 gitweb에 프로젝트를 추가하는 방법이다.</p>
 
 <p>기본적인 사용법은 아래와 같고</p>
 
 <pre><code>$ cd /var/cache/git
 $ ln -s /path/to/repo1/.git repo1.git</code></pre>
-<br />
+
 <p>다음과 같이 디렉토리를 만들어서 사용자/프로젝트별로 구분할 수도 있다.</p>
 
 <pre><code>$ cd /var/cache/git
@@ -138,9 +140,9 @@ $ cd username
 $
 $ ln -s /path/to/repo2/.git repo2.git
 $ ln -s /path/to/repo3/.git repo3.git</code></pre>
-<br /><br />
-<h3 id='id617'>참조</h3>
-<br />
+
+<h3 id='id1045'>참조</h3>
+
 <ul>
 <li><a href='http://wiki.kldp.org/wiki.php/gitweb'>http://wiki.kldp.org/wiki.php/gitweb</a></li>
 
@@ -154,7 +156,7 @@ $ ln -s /path/to/repo3/.git repo3.git</code></pre>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next disabled"><a>Next &rarr;</a>
+        <li class="next"><a href="/Pro Git/2012/08/29/pro-git-1-introduction" title="Pro Git - 1. 소개">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -195,7 +197,7 @@ $ ln -s /path/to/repo3/.git repo3.git</code></pre>
 
   
      
-    	<li><a href="/tags.html#git-ref">git <span>1</span></a></li>
+    	<li><a href="/tags.html#git-ref">git <span>3</span></a></li>
      
     	<li><a href="/tags.html#gitweb-ref">gitweb <span>1</span></a></li>
      
