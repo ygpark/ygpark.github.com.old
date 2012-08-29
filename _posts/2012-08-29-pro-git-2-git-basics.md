@@ -3,7 +3,7 @@ layout: post
 title: "Pro Git - 2. Git의 기초"
 description: ""
 category: Pro Git
-tags: [git, progit]
+tags: [VCS, git, gitpro]
 ---
 {% include JB/setup %}
 

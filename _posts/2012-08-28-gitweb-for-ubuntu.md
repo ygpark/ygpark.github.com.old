@@ -2,7 +2,7 @@
 layout: post
 title: "gitweb for ubuntu"
 description: ""
-category: 
+category: Git
 tags: [git, gitweb, linux, ubuntu]
 ---
 {% include JB/setup %}

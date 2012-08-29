@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Linux: CPU scaling governor - 박영기 BLOG</title>
+    <title>gitweb for ubuntu - 박영기 BLOG</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
     <meta http-equiv="Expires" content="-1"/> 
@@ -107,28 +107,56 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Linux: CPU scaling governor <!-- <small>Supporting tagline</small>--></h1>
+  <h1>gitweb for ubuntu <!-- <small>Supporting tagline</small>--></h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <h3 id='cpu_'>CPU 정보</h3>
+    <h3 id='gitweb_'>gitweb 설치</h3>
 
-<pre><code>cat /proc/cpuinfo</code></pre>
+<p>이렇게 입력하면 웹으로 gitweb에 접근할 수 있다.</p>
 
-<h3 id='2__'>2번째 코어 살리기</h3>
+<pre><code>$ sudo apt-get install apache2 git-core gitweb
+$
+$ cd /var/www/
+$ mkdir gitweb
+$ cd gitweb
+$ ln -s /usr/share/gitweb/* .</code></pre>
 
-<pre><code>echo 1 &gt; /sys/devices/system/cpu/cpu1/online 
-grep &quot;processor&quot; /proc/cpuinfo</code></pre>
+<h3 id='_'>프로젝트 설정</h3>
+
+<p>다음으로 gitweb에 프로젝트를 추가하는 방법이다.</p>
+
+<p>기본적인 사용법은 아래와 같고</p>
+
+<pre><code>$ cd /var/cache/git
+$ ln -s /path/to/repo1/.git repo1.git</code></pre>
+
+<p>다음과 같이 디렉토리를 만들어서 사용자/프로젝트별로 구분할 수도 있다.</p>
+
+<pre><code>$ cd /var/cache/git
+$ mkdir username
+$ cd username
+$
+$ ln -s /path/to/repo2/.git repo2.git
+$ ln -s /path/to/repo3/.git repo3.git</code></pre>
+
+<h3 id='id6'>참조</h3>
+
+<ul>
+<li><a href='http://wiki.kldp.org/wiki.php/gitweb'>http://wiki.kldp.org/wiki.php/gitweb</a></li>
+
+<li><a href='http://kldp.org/node/100726'>http://kldp.org/node/100726</a></li>
+</ul>
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/Linux/2012/08/24/bash-find-xargs-grep" title="bash에서 검색하기">&larr; Previous</a></li>
+        <li class="prev"><a href="/Linux Kernel/2012/08/28/creating-new-linux-kernel-defconfig" title="Linux Kernel - 새 defconfig 만들기">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/Linux/2012/08/24/makefile-example" title="Makefile 예제">Next &rarr;</a></li>
+        <li class="next"><a href="/Pro Git/2012/08/29/pro-git-0-readme" title="Pro Git - 0. README">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -158,7 +186,7 @@ grep &quot;processor&quot; /proc/cpuinfo</code></pre>
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>24 August 2012</span></div>
+    <div class="date"><span>28 August 2012</span></div>
 
   
     <h4>Tags</h4>
@@ -169,9 +197,13 @@ grep &quot;processor&quot; /proc/cpuinfo</code></pre>
 
   
      
-    	<li><a href="/tags.html#Linux-ref">Linux <span>5</span></a></li>
+    	<li><a href="/tags.html#git-ref">git <span>8</span></a></li>
      
-    	<li><a href="/tags.html#cpu-ref">cpu <span>1</span></a></li>
+    	<li><a href="/tags.html#gitweb-ref">gitweb <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#linux-ref">linux <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#ubuntu-ref">ubuntu <span>1</span></a></li>
     
   
 
