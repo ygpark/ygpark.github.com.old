@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>gitweb 설치 - 박영기 BLOG</title>
+    <title>Linux Kernel - 새 defconfig 만들기 - 박영기 BLOG</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
@@ -110,56 +110,33 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>gitweb 설치 <!-- <small>Supporting tagline</small>--></h1>
+  <h1>Linux Kernel - 새 defconfig 만들기 <!-- <small>Supporting tagline</small>--></h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <h3 id='gitweb_'>gitweb 설치</h3>
+    <p>초보 리눅스커널 개발자에게 유용한 팁입니다.</p>
 
-<p>이렇게 입력하면 웹으로 gitweb에 접근할 수 있다.</p>
+<p>우리는 커널 빌드할 때 <strong>make xxx_defconfig</strong> 같은 명령을 입력합니다. 이 명령의 의미는 &#8216;미리 만들어 놓은 <strong>.config</strong> 파일을 사용하라&#8217; 입니다.</p>
 
-<pre><code>$ sudo apt-get install apache2 git-core gitweb
-$
-$ cd /var/www/
-$ mkdir gitweb
-$ cd gitweb
-$ ln -s /usr/share/gitweb/* .</code></pre>
+<pre><code>$ make xxx_defconfig
+$ make</code></pre>
 
-<h3 id='_'>프로젝트 설정</h3>
+<p>내 커널소스도 이렇게 만들고 싶은데 어떻게 해야할까요? 먼저 커널소스의 루트디렉토리에서 지금 쓰고있는 <strong>.config</strong>를 찾습니다. 그리고 그것을 <strong>arch/arm/configs/</strong> 디렉토리에 복사합니다. 이게 다에요. 다음엔 그냥 <strong>make xxx_defconfig</strong> 명령을 사용하기만 하면 됩니다.</p>
 
-<p>다음으로 gitweb에 프로젝트를 추가하는 방법이다.</p>
+<pre><code>$ cp .config arch/arm/configs/xxx_defconfig
+$ make xxx_defconfig</code></pre>
 
-<p>기본적인 사용법은 아래와 같고</p>
-
-<pre><code>$ cd /var/cache/git
-$ ln -s /path/to/repo1/.git repo1.git</code></pre>
-
-<p>다음과 같이 디렉토리를 만들어서 사용자/프로젝트별로 구분할 수도 있다.</p>
-
-<pre><code>$ cd /var/cache/git
-$ mkdir username
-$ cd username
-$
-$ ln -s /path/to/repo2/.git repo2.git
-$ ln -s /path/to/repo3/.git repo3.git</code></pre>
-
-<h3 id='id3880'>참조</h3>
-
-<ul>
-<li><a href='http://wiki.kldp.org/wiki.php/gitweb'>http://wiki.kldp.org/wiki.php/gitweb</a></li>
-
-<li><a href='http://kldp.org/node/100726'>http://kldp.org/node/100726</a></li>
-</ul>
+<p>이제 마음놓고 옵션들을 바꿀 수 있고 되돌릴 수도 있습니다. make distclean 같은 명령도 내릴 수 있죠. :D</p>
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/Linux Kernel Tip/2012/08/28/creating-new-linux-kernel-defconfig" title="Linux Kernel - 새 defconfig 만들기">&larr; Previous</a></li>
+        <li class="prev"><a href="/Linux/2012/08/27/gdb-manual" title="gdb 매뉴얼 - core dump 사용하기">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/Pro Git/2012/08/29/pro-git-0-readme" title="Pro Git - 0. README">Next &rarr;</a></li>
+        <li class="next"><a href="/Git/2012/08/28/gitweb-for-ubuntu" title="gitweb 설치">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -200,13 +177,11 @@ $ ln -s /path/to/repo3/.git repo3.git</code></pre>
 
   
      
-    	<li><a href="/tags.html#git-ref">git <span>8</span></a></li>
-     
-    	<li><a href="/tags.html#gitweb-ref">gitweb <span>1</span></a></li>
-     
     	<li><a href="/tags.html#linux-ref">linux <span>3</span></a></li>
      
-    	<li><a href="/tags.html#ubuntu-ref">ubuntu <span>1</span></a></li>
+    	<li><a href="/tags.html#kernel-ref">kernel <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#defconfig-ref">defconfig <span>1</span></a></li>
     
   
 
