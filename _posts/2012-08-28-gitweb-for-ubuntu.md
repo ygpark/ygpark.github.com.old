@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "gitweb for ubuntu"
+title: "gitweb 설치"
 description: ""
 category: Git
 tags: [git, gitweb, linux, ubuntu]
