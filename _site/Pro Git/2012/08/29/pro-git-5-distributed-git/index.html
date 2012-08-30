@@ -129,7 +129,7 @@
 
 <p>중앙집중식 시스템에서는 보통 중앙집중식 협업 모델이라는 한 가지 방식밖에 없다. 하나의 중앙 저장소가 존재하고 모든 변경 사항은 이 중앙 저장소로 집중된다. 모든 개발자는 이 중앙 저장소를 기준으로 한다. 즉, 개발자 다수는 이 하나의 중앙 저장소를 중심으로 작업을 한다(그림 5-1)</p>
 
-<p><img src='/images/progit/18333fig0501-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0501-tn.png' /></p>
 
 <p>그림 5-1. 중앙집중식 Workflow.</p>
 
@@ -155,7 +155,7 @@
 <li>Integration-Manager는 Merge한 사항을 메인 저장소에 Push한다.</li>
 </ol>
 
-<p><img src='/images/progit/18333fig0502-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0502-tn.png' /></p>
 
 <p>그림 5-2. Integration-Manager Workflow</p>
 
@@ -175,7 +175,7 @@
 <li>Dictator는 Merge한 자신의 master 브랜치를 Push하여 다른 모든 개발자가 Rebase할 수 있는 기준으로 만든다.</li>
 </ol>
 
-<p><img src='/images/progit/18333fig0503-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0503-tn.png' /></p>
 
 <p>그림 5-3. Benevolent dictator Workflow</p>
 
@@ -288,7 +288,7 @@ From john@githost:simplegit
 
 <p>Fetch하고 나면 John씨의 로컬 저장소는 그림 5-4와 같이 된다.</p>
 
-<p><img src='/images/progit/18333fig0504-tn.png' alt='' /> Figure 5-4. Fetch하고 난 John씨의 저장소.</p>
+<p><img alt='' src='/images/progit/18333fig0504-tn.png' /> Figure 5-4. Fetch하고 난 John씨의 저장소.</p>
 
 <p>John씨는 Jessica씨가 저장소로 Push했던 커밋이 있는 브랜치를 로컬 저장소로 가져왔다. 하지만, Push를 하기 전에 Fetch한 브랜치를 Merge해야 한다:</p>
 
@@ -299,7 +299,7 @@ Merge made by recursive.
 
 <p>Merge가 잘 이루어지면 John씨의 브랜치는 그림 5-5와 같은 상태가 된다.</p>
 
-<p><img src='/images/progit/18333fig0505-tn.png' alt='' /> Figure 5-5. origin/master 브랜치를 Merge하고 난 후, John씨의 저장소.</p>
+<p><img alt='' src='/images/progit/18333fig0505-tn.png' /> Figure 5-5. origin/master 브랜치를 Merge하고 난 후, John씨의 저장소.</p>
 
 <p>John씨는 Merge하고 나서 자신이 작업한 코드가 제대로 동작하는지 확인하고 공유하는 저장소로 Push한다:</p>
 
@@ -310,11 +310,11 @@ To john@githost:simplegit.git
 
 <p>이제 John씨의 저장소는 그림 5-6 처럼 되었다.</p>
 
-<p><img src='/images/progit/18333fig0506-tn.png' alt='' /> Figure 5-6. Push하고 난 후, John씨의 저장소.</p>
+<p><img alt='' src='/images/progit/18333fig0506-tn.png' /> Figure 5-6. Push하고 난 후, John씨의 저장소.</p>
 
 <p>동시에 Jessica씨는 토픽 브랜치를 하나 만들었다. issue54 브랜치를 만들고 세 번에 걸쳐서 커밋을 했다. 아직 John씨의 커밋을 Fetch하지 않은 상황이기 때문에 그림 5-7과 같은 상황이 된다.</p>
 
-<p><img src='/images/progit/18333fig0507-tn.png' alt='' /> Figure 5-7. Jessica씨의 저장소.</p>
+<p><img alt='' src='/images/progit/18333fig0507-tn.png' /> Figure 5-7. Jessica씨의 저장소.</p>
 
 <p>Jessica씨는 John씨의 작업을 적용하기 위해 Fetch를 먼저 한다:</p>
 
@@ -326,7 +326,7 @@ From jessica@githost:simplegit
 
 <p>위 명령을 통해 John씨가 Push한 커밋을 모두 내려받는다. 그리고 나서 Jessica씨의 저장소는 그림 5-8과 같은 상태가 될 것이다.</p>
 
-<p><img src='/images/progit/18333fig0508-tn.png' alt='' /> Figure 5-8. John씨의 커밋을 Fetch한 후 Jessica씨의 저장소.</p>
+<p><img alt='' src='/images/progit/18333fig0508-tn.png' /> Figure 5-8. John씨의 커밋을 Fetch한 후 Jessica씨의 저장소.</p>
 
 <p>Jessica씨는 토픽 브랜치의 작업을 마치고 만약 origin/master와 Merge를 하게 되면 어떤 내용이 Merge될 지, <code>git log</code> 명령으로 확인한다:</p>
 
@@ -362,7 +362,7 @@ Merge made by recursive.
 
 <p>위와 같이 Merge가 잘 되면 그림 5-9와 같은 상태가 된다.</p>
 
-<p><img src='/images/progit/18333fig0509-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0509-tn.png' /></p>
 
 <p>그림 5-9. Merge 이후 Jessica씨의 저장소.</p>
 
@@ -375,13 +375,13 @@ To jessica@githost:simplegit.git
 
 <p>두 개발자의 커밋과 Merge가 성공적으로 이루어지고 난 후의 결과는 5-10과 같다.</p>
 
-<p><img src='/images/progit/18333fig0510-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0510-tn.png' /></p>
 
 <p>그림 5-10. Jessica씨가 서버로 Push하고 난 후의 저장소.</p>
 
 <p>여기서 살펴본 예제가 가장 간단한 상황이다. 토픽 브랜치에서 수정하고 로컬의 master 브랜치에 Merge를 한다. 작업한 내용을 프로젝트의 공유 저장소에 Push하고자 할 때에는 우선 origin/master 브랜치를 Fetch하고 Merge한다. 그리고 나서 Merge한 결과를 다시 서버로 Push한다. 이런 일반적인 Workflow은 그림 5-11로 나타낼 수 있다.</p>
 
-<p><img src='/images/progit/18333fig0511-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0511-tn.png' /></p>
 
 <p>그림 5-11. 여러 개발자가 Git을 사용하는 일반적인 Workflow</p>
 
@@ -428,7 +428,7 @@ $ git commit -am &#39;add ls-files&#39;
 
 <p>Jessica씨의 저장소는 그림 5-12과 같을 것이다.</p>
 
-<p><img src='/images/progit/18333fig0512-tn.png' alt='' /> Figure 5-12. Jessica씨의 저장소.</p>
+<p><img alt='' src='/images/progit/18333fig0512-tn.png' /> Figure 5-12. Jessica씨의 저장소.</p>
 
 <p>작업을 마치고 Push하려고 하는데 Jesie씨가 이미 일부 작업을 하고 서버에 featureBee 브랜치로 Push했다는 이메일을 보내왔다. 그러므로 Jessica씨는 Jesie씨의 작업을 먼저 Merge해야만 Push할 수 있다. Merge하기 위해서 우선 <code>git fetch</code>로 Fetch한다:</p>
 
@@ -492,19 +492,19 @@ To jessica@githost:simplegit.git
 
 <p>위와 같은 작업을 마치고 나면 Jessica씨의 저장소는 그림 5-13과 같은 모습이 된다.</p>
 
-<p><img src='/images/progit/18333fig0513-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0513-tn.png' /></p>
 
 <p>그림 5-13. 마지막 Push하고 난 후의 Jessica씨의 저장소</p>
 
 <p>featureA와 featureBee 브랜치가 프로젝트의 메인 브랜치로 Merge할 준비가 되었다고 Integration-Manager에게 알려준다. Integration-Manager가 두 브랜치를 모두 Merge하고 난 후에 메인 브랜치를 Fetch해 오면 그림 5-14와 같은 모양이 돼 있을 것이다.</p>
 
-<p><img src='/images/progit/18333fig0514-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0514-tn.png' /></p>
 
 <p>그림 5-14. 두 브랜치가 메인 브랜치에 Merge된 후의 저장소.</p>
 
 <p>수많은 팀의 작업을 동시에 진행하고 나중에 Merge하는, 이런 기능을 사용하기 위해 다른 버전 관리 시스템에서 Git으로 바꾸는 조직들이 많아지고 있다. 작은 팀이 자신의 브랜치로 작업하면서 메인 브랜치에 영향을 끼치지 않는다는 점이 Git의 장점이다. 그림 5-15는 이런 Workflow을 나타내고 있다.</p>
 
-<p><img src='/images/progit/18333fig0515-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0515-tn.png' /></p>
 
 <p>그림 5-15. 대규모 팀의 Workflow.</p>
 
@@ -565,7 +565,7 @@ $ git fetch origin</code></pre>
 
 <p>그림 5-16 처럼 각 토픽은 일종의 실험실이라고 할 수 있다. 각 토픽은 서로 방해하지 않고 독립적으로 커밋을 수정하거나 Rebase할 수 있다.</p>
 
-<p><img src='/images/progit/18333fig0516-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0516-tn.png' /></p>
 
 <p>그림 5-16. featureB 수정작업이 끝난 직후 저장소의 모습.</p>
 
@@ -577,7 +577,7 @@ $ git push -f myfork featureA</code></pre>
 
 <p>위 명령들을 실행하고 나면 그림 5-17과 같아진다.</p>
 
-<p><img src='/images/progit/18333fig0517-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0517-tn.png' /></p>
 
 <p>그림 5-17. FeatureA에 대한 Rebase가 적용된 후의 모습</p>
 
@@ -597,7 +597,7 @@ $ git push myfork featureBv2</code></pre>
 
 <p>수정을 마치면 관리자에게 featureBv2 브랜치를 확인해 보라고 메시지를 보낸다 (그림 5-18 참고).</p>
 
-<p><img src='/images/progit/18333fig0518-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0518-tn.png' /></p>
 
 <p>그림 5-18. featureBv2 브랜치를 Commit한 이후 저장소의 모습.</p>
 
@@ -694,7 +694,7 @@ Result: OK</code></pre>
 
 <p>이후 Gmail의 Draft 폴더로 가서 To 부분을 메일링리스트의 주소로 변경하고 CC 부분에 해당 메일을 참고해야 하는 관리자나 개발자의 메일 주소를 적고 실제로 전송한다.</p>
 
-<h3 id='id1794'>요약</h3>
+<h3 id='id58'>요약</h3>
 
 <p>이번 절에서는 Git을 사용하여 프로젝트를 운영하는 방법과 프로젝트에 기여할 때 필요한 도구들을 살펴보았다. 다음 절에서는 동전의 뒷면인 프로젝트를 운영하는 방법에 대하여 살펴볼 것이다. 즉 친절한 Dictator나 Integration-Manager가 되어 보는 것이다.</p>
 
@@ -891,11 +891,11 @@ $ git diff 36c7db </code></pre>
 
 <p>바로 master 브랜치에 Merge하는 것이 가장 간단하다. 이 Workflow에서는 master 브랜치가 안전한 코드라고 가정해야 한다. 토픽 브랜치를 검증하고 master 브랜치로 Merge할 때마다 토픽 브랜치를 삭제한다. 그림 5-19처럼 <code>ruby_client</code> 브랜치와 <code>php_client</code> 브랜치가 있을 때 <code>ruby_client</code> 브랜치를 master 브랜치로 Merge한 후 <code>php_client</code> 브랜치를 Merge하면 그림 5-20과 같아진다.</p>
 
-<p><img src='/images/progit/18333fig0519-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0519-tn.png' /></p>
 
 <p>그림 5-19. 저장소의 두 브랜치.</p>
 
-<p><img src='/images/progit/18333fig0520-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0520-tn.png' /></p>
 
 <p>그림 5-20. Merge한 후의 저장소.</p>
 
@@ -903,15 +903,15 @@ $ git diff 36c7db </code></pre>
 
 <p>개발자가 많고 규모가 큰 프로젝트에서는 두 단계로 Merge하는 것이 좋다. 그래서 긴 호흡 브랜치를 두 개로 유지해야 한다. master 브랜치는 아주 안정적인 버전을 Release하기 위해서 사용하고 develop 브랜치는 새로 수정된 코드들을 통합할 때 사용한다. 그리고 두 브랜치를 모두 저장소에 Push한다. 우선 develop 브랜치에 토픽 브랜치(그림 5-21)를 그림 5-22과 같이 Merge한다. 그 후에 Release해도 될만한 수준이 되면 master 브랜치를 develop 브랜치까지 Fast-forward시킨다(그림 5-23).</p>
 
-<p><img src='/images/progit/18333fig0521-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0521-tn.png' /></p>
 
 <p>그림 5-21. 토픽 브랜치를 Merge하기 전.</p>
 
-<p><img src='/images/progit/18333fig0522-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0522-tn.png' /></p>
 
 <p>그림 5-22. 토픽 브랜치를 Merge한 후.</p>
 
-<p><img src='/images/progit/18333fig0523-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0523-tn.png' /></p>
 
 <p>그림 5-23. 토픽 브랜치를 Release한 후.</p>
 
@@ -921,13 +921,13 @@ $ git diff 36c7db </code></pre>
 
 <p>Git을 개발하는 프로젝트는 긴 호흡의 브랜치를 4개 운영한다. 각 브랜치 이름은 master, next, pu (Proposed Updates), maint 이다. maint는 마지막으로 Release한 버전을 지원하기 위한 브랜치이다. 기여자들이 새로운 기능을 제안하면 관리자는 그림 5-24처럼 자신의 저장소에 토픽 브랜치를 만들어 관리한다. 그리고 각 토픽이 부족한 점이 없는지 안정적인지 계속 테스트한다. 안정화되면 next로 Merge하고 저장소에 Push한다. 그러면 모두가 잘 통합됐는지 확인할 수 있게 된다.</p>
 
-<p><img src='/images/progit/18333fig0524-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0524-tn.png' /></p>
 
 <p>그림 5-24. 토픽 브랜치를 동시에 여러 개 관리하는 것은 복잡하다.</p>
 
 <p>토픽 브랜치가 좀 더 개선돼야 하면 next가 아니라 pu에 Merge한다. 그 후에 충분히 검증을 마치면 pu에서 next로 옮기고 next를 기반으로 pu를 다시 만든다. next에는 아직 master에 넣기에 모자라 보이는 것들이 들어 있다. 즉 next 브랜치는 정말 가끔 Rebase하고 pu는 자주 Rebase하지만 master는 항상 Fast-forward한다(그림 5-25).</p>
 
-<p><img src='/images/progit/18333fig0525-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0525-tn.png' /></p>
 
 <p>그림 5-25. 토픽 브랜치를 긴 호흡의 통합 브랜치로 Merge하기.</p>
 
@@ -939,7 +939,7 @@ $ git diff 36c7db </code></pre>
 
 <p>한 브랜치에서 다른 브랜치로 작업한 내용을 옮기는 또 다른 방식으로 Cherry-pick이란 것도 있다. Git의 Cherry-pick은 하나의 커밋만 Rebase하는 것이다. 하나의 커밋에서 Patch 내용을 만들어 현재 브랜치에 적용을 하는 것이다. 토픽 브랜치에 있는 커밋중에서 하나만 고르거나 토픽 브랜치에 커밋이 하나밖에 없을 때 Rebase보다 유용하다. 그림 5-26의 예를 들어보자.</p>
 
-<p><img src='/images/progit/18333fig0526-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0526-tn.png' /></p>
 
 <p>그림 5-26. Cherry-pick을 실행하기 전의 저장소.</p>
 
@@ -952,7 +952,7 @@ Finished one cherry-pick.
 
 <p>위 명령을 실행하면 e43a6 커밋에서 변경된 내용을 현재 브랜치에 똑같이 적용을 한다. 하지만, 변경을 적용한 시점이 다르므로 새 커밋의 SHA-1 해시 값은 달라진다. 명령을 실행하고 나면 그림 5-27과 같이 될 것이다.</p>
 
-<p><img src='/images/progit/18333fig0527-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0527-tn.png' /></p>
 
 <p>그림 5-27. Cherry-pick 방식으로 커밋 하나를 적용한 후의 저장소.</p>
 
@@ -1037,7 +1037,7 @@ Tom Preston-Werner (4):
 
 <p>이렇게 Author를 기준으로 정리한 커밋들을 이메일로 전송한다.</p>
 
-<h2 id='id1795'>요약</h2>
+<h2 id='id59'>요약</h2>
 
 <p>이제 Git 프로젝트에 기여하고, 자신의 프로젝트를 운영하고, 다른 사람이 기여한 내용을 통합하는 것 정도는 쉽게 할 수 있을 것이다. 일단 쓸만한 Git 개발자가 된 것을 축하한다. 다음 장에서 복잡한 상황을 다루는 방법과 강력한 도구들을 배우고 나면 Git 장인이라고 불릴 수 있을 것이다.</p>
     <hr>
