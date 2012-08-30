@@ -2,7 +2,7 @@
 layout: post
 title: "Linux Kernel - 새 defconfig 만들기"
 description: ""
-category: Linux Kernel
+category: Linux Kernel Tip
 tags: [linux, kernel, defconfig]
 ---
 {% include JB/setup %}
