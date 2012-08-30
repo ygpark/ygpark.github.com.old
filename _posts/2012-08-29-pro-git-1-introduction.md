@@ -7,6 +7,20 @@ tags: [VCS, git, gitpro]
 ---
 {% include JB/setup %}
 
+<hr/>
+
+###목차
+
+- [0. Pro Git 책의 내용](/Pro%20Git/2012/08/29/pro-git-0-readme/)
+- [1. 소개](/Pro%20Git/2012/08/29/pro-git-1-introduction/)
+- [2. Git의 기초](/Pro%20Git/2012/08/29/pro-git-2-git-basics/)
+- [3. Git 브랜치](/Pro%20Git/2012/08/29/pro-git-3-branching/)
+- [4. Git 서버](/Pro%20Git/2012/08/29/pro-git-4-git-server/)
+- [5. 분산 환경에서의 Git](/Pro%20Git/2012/08/29/pro-git-5-distributed-git/)
+- [6. Git 도구](/Pro%20Git/2012/08/29/pro-git-6-git-tools/)
+
+<hr/>
+
 # 시작하기 #
 
 이 장에서는 처음 접하는 사람들에게 Git을 설명한다. 먼저 버전 관리 도구에 대한 이해를, 그리고 Git을 설치하는 방법을, 마지막으로 Git 서버를 설정하고 사용하는 방법을 설명한다. 이 장을 다 읽고 나면 Git의 탄생 배경, Git을 사용하는 이유, Git을 설정하고 사용하는 방법을 터득할 것이다.
