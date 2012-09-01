@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Study"
+title: "Book"
 description: ""
 ---
 {% include JB/setup %}
