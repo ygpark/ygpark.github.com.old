@@ -13,6 +13,7 @@ http://ygpark.github.com/pages/progit/04-git-server/01-chapter4.html
 http://ygpark.github.com/pages/progit/01-introduction/01-chapter1.html
 http://ygpark.github.com/pages/progit/02-git-basics/01-chapter2.html
 http://ygpark.github.com/pages/progit/06-git-tools/01-chapter6.html
+http://ygpark.github.com/pages/book.html
 http://ygpark.github.com/atom.xml
 http://ygpark.github.com/categories.html
 http://ygpark.github.com/tags.html
