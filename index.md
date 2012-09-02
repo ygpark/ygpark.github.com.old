@@ -1,15 +1,23 @@
 ---
 layout: page
-title: Home
+title: HOME
 ---
 
 {% include JB/setup %}
 
-<img src="/images/wonder/good-body.jpg" width="225" />
-<img src="http://farm3.staticflickr.com/2415/2466566500_797ffb7f60_n.jpg" width="310" alt="nice body" />
-<img src="http://farm3.staticflickr.com/2581/4123527670_3381ea3ce2_n.jpg" width="310" alt="house" />
-<img src="http://farm7.staticflickr.com/6069/6065244606_8bc6aca142_n.jpg" width="310" alt="house" />
-<img src="http://farm6.staticflickr.com/5100/5540460073_524a338997_n.jpg" height="310" alt="awesome car" />
-<img src="/images/wonder/i-speak-english-small.jpg" width="200" height="500" alt="english well" />
+<table width="100%">
 
+<tr>
+<td>
+	<img src="/images/preface/blond-coffee-girl-starbucks.jpg" />
+</td>
+<td width="100%" align="center">
+	<a href="/pages/dreams-come-true.html" class="btn">꿈은 이루이진다</a>
+</td>
+</tr>
+</table>
 
+<hr/>
+
+##Intro
+2012년 여름. github.com으로 블로그를 이전하였습니다. 사실 정들었던 오래된 블로그를 정리하며 많이 망설였습니다. 하지만 github.com이 제공하는 블로그 환경과 markdown 그리고 Jekyll의 조합을 만나본 후부터 아쉽기는 커녕 오히려 잘했다는 생각이 듭니다. markdown은 놀라울정도로 글쓰기에 집중할 수 있게 해줍니다. 이참에 글쓰기에 취미를 붙여볼까 하네요 :)
