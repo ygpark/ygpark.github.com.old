@@ -41,7 +41,7 @@
             <li><a href="/archive.html">Archive</a></li>
             <li><a href="/categories.html">Categories</a></li>
             <li><a href="/tags.html">Tags</a></li>
-            <li><a href="/pages/book.html">Book</a></li>
+            <li><a href="/pages/documents.html">Documents</a></li>
             <li><a href="/pages/about.html">About</a></li>
 	<!--
             
@@ -59,6 +59,10 @@
       	
       	<li><a href="/pages.html">Pages</a></li>
       	
+      
+    
+  
+    
       
     
   
@@ -304,7 +308,7 @@ Did you mean this?
 
 <p><code>color.ui = always</code>라고 설정하면 결과를 리다이렉트할 때에도 컬러 코드가 출력된다. 이렇게까지 설정해야 하는 경우는 매우 드물다. 대신 Git 명령에 <code>--color</code> 옵션을 주고 어떻게 출력할지 그때그때 정해줄 수 있다. 보통은 <code>color.ui = true</code> 만으로도 충분하다.</p>
 
-<h4 id='id57'><code>color.*</code></h4>
+<h4 id='id1740'><code>color.*</code></h4>
 
 <p>좀 더 꼼꼼하게 컬러를 설정하거나 예전 버전이라서 <code>color.ui</code> 옵션을 사용할 수 없으면 다음과 같이 종류별로 설정할 수 있다. 모두 <code>true</code>, <code>false</code>, <code>always</code> 중 하나를 고를 수 있다:</p>
 
@@ -376,7 +380,7 @@ $ git config --global diff.external extDiff</code></pre>
 
 <p>diff 결과가 터미널에 출력되는 대신 P4Merge가 실행된다. 그리고 그림 7-1처럼 그 프로그램 안에서 보여준다:</p>
 
-<p><img alt='' src='/images/progit/18333fig0701-tn.png' /></p>
+<p><img src='/images/progit/18333fig0701-tn.png' alt='' /></p>
 
 <p>그림 7-1. P4Merge.</p>
 
@@ -642,11 +646,11 @@ $Id: 42812b7653c7b88933f8a9d6cad0ca16714b9bb3 $</code></pre>
 
 <p>Commit/Checkout할 때 사용할 필터를 직접 만들어 쓸 수 있는데, 방향에 따라 &#8220;clean&#8221; 필터와 &#8220;smudge&#8221; 필터라고 부른다. &#8220;.gitattributes&#8221; 파일에 파일 경로마다 다른 필터를 설정할 수 있다. Checkout할 때 파일을 처리하는 것이 &#8220;smudge&#8221; 필터이고(그림 7-2) 커밋할 때 처리하는 필터가 &#8220;clean&#8221; 필터이다. 이 필터로 할 수 있는 일은 무궁무진하다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0702-tn.png' /></p>
+<p><img src='/images/progit/18333fig0702-tn.png' alt='' /></p>
 
 <p>그림 7-2. &#8220;smudge&#8221; 필터는 Checkout할 때 실행된다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0703-tn.png' /></p>
+<p><img src='/images/progit/18333fig0703-tn.png' alt='' /></p>
 
 <p>그림 7-3. &#8220;clean&#8221; 필터는 파일을 Stage할 때 실행된다.</p>
 
@@ -1123,7 +1127,7 @@ end</code></pre>
 
 <p>이 방법의 문제는 매우 느리고 보통은 필요 없다는 것이다. 어차피 Fast-forward가 아닌 Push은 <code>-f</code> 옵션을 주어야 Push할 수 있다. 하지만, 이 예제는 이론적으로 문제가 될만한 Rebase는 방지할 수 있다는 것을 보여준다.</p>
 
-<h2 id='id58'>요약</h2>
+<h2 id='id1741'>요약</h2>
 
 <p>프로젝트에 적절하도록 Git을 설정하는 방법을 배웠다. 주요한 서버/클라이언트 설정 방법, 파일 단위로 설정하는 Attributes, 이벤트 훅, 정책을 강제하는 방법을 배웠다. 이제 필요한 Workflow를 만들고 Git을 거기에 맞게 설정할 수 있을 것이다.</p>
   </div>

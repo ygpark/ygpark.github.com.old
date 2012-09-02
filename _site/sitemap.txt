@@ -2,7 +2,9 @@
 http://ygpark.github.com/sitemap.txt
 http://ygpark.github.com/pages.html
 http://ygpark.github.com/index.html
+http://ygpark.github.com/pages/documents.html
 http://ygpark.github.com/pages/about.html
+http://ygpark.github.com/pages/dreams-come-true.html
 http://ygpark.github.com/pages/progit/05-distributed-git/01-chapter5.html
 http://ygpark.github.com/pages/progit/03-git-branching/01-chapter3.html
 http://ygpark.github.com/pages/progit/09-git-internals/01-chapter9.html
@@ -13,7 +15,6 @@ http://ygpark.github.com/pages/progit/04-git-server/01-chapter4.html
 http://ygpark.github.com/pages/progit/01-introduction/01-chapter1.html
 http://ygpark.github.com/pages/progit/02-git-basics/01-chapter2.html
 http://ygpark.github.com/pages/progit/06-git-tools/01-chapter6.html
-http://ygpark.github.com/pages/book.html
 http://ygpark.github.com/atom.xml
 http://ygpark.github.com/categories.html
 http://ygpark.github.com/tags.html
