@@ -8,10 +8,10 @@ title: HOME
 <table width="100%">
 
 <tr>
-<td>
+<td width="400px">
 	<img src="/images/preface/blond-coffee-girl-starbucks.jpg" />
 </td>
-<td width="100%" align="center">
+<td align="center">
 	<a href="/pages/dreams-come-true.html" class="btn">꿈은 이루이진다</a>
 </td>
 </tr>
