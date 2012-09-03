@@ -7,12 +7,20 @@ tags: [git, gitweb, linux, ubuntu]
 ---
 {% include JB/setup %}
 
+이 문서는 Git 사용자에게 꼭 필요한 필수 유틸리티인 gitweb의 설치에 대해서 설명한다.
+
+![](/images/gitweb/gitweb.png)
+
+그림 1. kernel.org 사이트의 gitweb
+
+
+
 ###gitweb 설치
 
 이렇게 입력하면 웹으로 gitweb에 접근할 수 있다.
 
 	$ sudo apt-get install apache2 git-core gitweb
-	$
+
 	$ cd /var/www/
 	$ mkdir gitweb
 	$ cd gitweb
@@ -32,7 +40,7 @@ tags: [git, gitweb, linux, ubuntu]
 	$ cd /var/cache/git
 	$ mkdir username
 	$ cd username
-	$
+
 	$ ln -s /path/to/repo2/.git repo2.git
 	$ ln -s /path/to/repo3/.git repo3.git
 
