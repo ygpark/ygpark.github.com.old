@@ -4,7 +4,7 @@
  <title>박영기 BLOG</title>
  <link href="http://ygpark.github.com/atom.xml" rel="self"/>
  <link href="http://ygpark.github.com"/>
- <updated>2012-09-01T20:52:56-07:00</updated>
+ <updated>2012-09-03T10:07:51+09:00</updated>
  <id>http://ygpark.github.com</id>
  <author>
    <name>Young-Gi Park</name>
@@ -15,11 +15,11 @@
  <entry>
    <title>lxr 설치하기 (Ubuntu 10.04)</title>
    <link href="http://ygpark.github.com/Linux Kernel Tip/2012/08/30/lxr-install-on-ubuntu"/>
-   <updated>2012-08-30T00:00:00-07:00</updated>
+   <updated>2012-08-30T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux Kernel Tip/2012/08/30/lxr-install-on-ubuntu</id>
    <content type="html">&lt;p&gt;http://lxr.sourceforge.net/에서 내려받을 수 있는 리눅스 교차 참조기인 lxr은 웹 브라우저로 커널 트리를 탐색하도록 커널 심볼 정의와 사용처를 하이퍼링크로 연결한다.&lt;/p&gt;
 
-&lt;h1 id='id1854'&gt;요구사항&lt;/h1&gt;
+&lt;h1 id='id7'&gt;요구사항&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Apache – Web server&lt;/li&gt;
@@ -29,7 +29,7 @@
 &lt;li&gt;Perl – Reference generator&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id='id1855'&gt;설치&lt;/h1&gt;
+&lt;h1 id='id8'&gt;설치&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sudo apt-get install lxr perl apache2&lt;/code&gt;&lt;/pre&gt;
 
@@ -136,14 +136,20 @@ $ sudo genxref&lt;/code&gt;&lt;/pre&gt;
  <entry>
    <title>gitweb 설치</title>
    <link href="http://ygpark.github.com/Git/2012/08/28/gitweb-for-ubuntu"/>
-   <updated>2012-08-28T00:00:00-07:00</updated>
+   <updated>2012-08-28T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Git/2012/08/28/gitweb-for-ubuntu</id>
-   <content type="html">&lt;h3 id='gitweb_'&gt;gitweb 설치&lt;/h3&gt;
+   <content type="html">&lt;p&gt;이 문서는 Git 사용자에게 꼭 필요한 필수 유틸리티인 gitweb의 설치에 대해서 설명한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='' src='/images/gitweb/gitweb.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;그림 1. kernel.org 사이트의 gitweb&lt;/p&gt;
+
+&lt;h3 id='gitweb_'&gt;gitweb 설치&lt;/h3&gt;
 
 &lt;p&gt;이렇게 입력하면 웹으로 gitweb에 접근할 수 있다.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sudo apt-get install apache2 git-core gitweb
-$
+
 $ cd /var/www/
 $ mkdir gitweb
 $ cd gitweb
@@ -163,11 +169,11 @@ $ ln -s /path/to/repo1/.git repo1.git&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;$ cd /var/cache/git
 $ mkdir username
 $ cd username
-$
+
 $ ln -s /path/to/repo2/.git repo2.git
 $ ln -s /path/to/repo3/.git repo3.git&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id='id1853'&gt;참조&lt;/h3&gt;
+&lt;h3 id='id6'&gt;참조&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='http://wiki.kldp.org/wiki.php/gitweb'&gt;http://wiki.kldp.org/wiki.php/gitweb&lt;/a&gt;&lt;/li&gt;
@@ -179,7 +185,7 @@ $ ln -s /path/to/repo3/.git repo3.git&lt;/code&gt;&lt;/pre&gt;
  <entry>
    <title>Linux Kernel - 새 defconfig 만들기</title>
    <link href="http://ygpark.github.com/Linux Kernel Tip/2012/08/28/creating-new-linux-kernel-defconfig"/>
-   <updated>2012-08-28T00:00:00-07:00</updated>
+   <updated>2012-08-28T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux Kernel Tip/2012/08/28/creating-new-linux-kernel-defconfig</id>
    <content type="html">&lt;p&gt;초보 리눅스커널 개발자에게 유용한 팁입니다.&lt;/p&gt;
 
@@ -199,11 +205,11 @@ $ make xxx_defconfig&lt;/code&gt;&lt;/pre&gt;
  <entry>
    <title>gdb 매뉴얼 - core dump 사용하기</title>
    <link href="http://ygpark.github.com/Linux/2012/08/27/gdb-manual"/>
-   <updated>2012-08-27T00:00:00-07:00</updated>
+   <updated>2012-08-27T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux/2012/08/27/gdb-manual</id>
    <content type="html">&lt;p&gt;core dump란 충돌이 발생했던 순간의 memory를 저장한 파일을 말한다. gdb는 core dump 파일을 불러와서 디버깅을 하는 기능을 제공한다. 하지만 그전에 core dump가 저장될 수 있도록 하는 설정이 필요하다.&lt;/p&gt;
 
-&lt;h2 id='id1851'&gt;준비작업&lt;/h2&gt;
+&lt;h2 id='id4'&gt;준비작업&lt;/h2&gt;
 
 &lt;p&gt;core dump가 저장될 수 있도록 하는 설정은 &lt;code&gt;ulimit&lt;/code&gt; 명령을 사용한다.&lt;/p&gt;
 
@@ -251,7 +257,7 @@ file locks                      (-x) unlimited&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;위와 같이 설정이 되었다면, 프로그램이 죽을 때 현재 디렉토리($PWD)에 core dump 파일이 생긴다.&lt;/p&gt;
 
-&lt;h2 id='id1852'&gt;사용법&lt;/h2&gt;
+&lt;h2 id='id5'&gt;사용법&lt;/h2&gt;
 
 &lt;p&gt;core dump를 이용한 디버깅 방법은 다음과 같다:&lt;/p&gt;
 
@@ -263,7 +269,7 @@ file locks                      (-x) unlimited&lt;/code&gt;&lt;/pre&gt;
  <entry>
    <title>Makefile 예제</title>
    <link href="http://ygpark.github.com/Linux/2012/08/24/makefile-example"/>
-   <updated>2012-08-24T00:00:00-07:00</updated>
+   <updated>2012-08-24T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux/2012/08/24/makefile-example</id>
    <content type="html">&lt;h2 id='1_application'&gt;예제1. Application&lt;/h2&gt;
 
@@ -338,7 +344,7 @@ clean:
  <entry>
    <title>Linux: CPU scaling governor</title>
    <link href="http://ygpark.github.com/Linux/2012/08/24/linux-cpu-scaling-governor"/>
-   <updated>2012-08-24T00:00:00-07:00</updated>
+   <updated>2012-08-24T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux/2012/08/24/linux-cpu-scaling-governor</id>
    <content type="html">&lt;h3 id='cpu_'&gt;CPU 정보&lt;/h3&gt;
 
@@ -353,7 +359,7 @@ grep &amp;quot;processor&amp;quot; /proc/cpuinfo&lt;/code&gt;&lt;/pre&gt;</conte
  <entry>
    <title>bash에서 검색하기</title>
    <link href="http://ygpark.github.com/Linux/2012/08/24/bash-find-xargs-grep"/>
-   <updated>2012-08-24T00:00:00-07:00</updated>
+   <updated>2012-08-24T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux/2012/08/24/bash-find-xargs-grep</id>
    <content type="html">&lt;p&gt;리눅스에서 일반적으로 파일을 찾을 때에는 find명령을, 텍스트를 걸러낼 때에는 grep명령을 사용합니다. 이 두 명령어는 없어서는 안될 중요한 명령입니다. 하지만 이 두 명령을 조합해서 쓴다면 더 막강한 힘을 발휘합니다. 바로 xargs으로 명령어들을 연결해주면 됩니다.&lt;/p&gt;
 
@@ -383,9 +389,9 @@ find . -name Kconfig | xargs grep --color -n $1&lt;/code&gt;&lt;/pre&gt;</conten
  <entry>
    <title>alsa-lib-1.0.16 cross compile for arm</title>
    <link href="http://ygpark.github.com/Linux/2012/08/24/alsa-lib-1016-cross-compile-for-arm"/>
-   <updated>2012-08-24T00:00:00-07:00</updated>
+   <updated>2012-08-24T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux/2012/08/24/alsa-lib-1016-cross-compile-for-arm</id>
-   <content type="html">&lt;h3 id='id1848'&gt;요약&lt;/h3&gt;
+   <content type="html">&lt;h3 id='id1'&gt;요약&lt;/h3&gt;
 
 &lt;p&gt;기본적인 크로스컴파일 방법과 configure시 libpython이 없다는 에러가 발생했을 때 대처법입니다.&lt;/p&gt;
 
@@ -397,7 +403,7 @@ $ make&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux --disable-python
 $ make&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id='id1849'&gt;경험담&lt;/h3&gt;
+&lt;h3 id='id2'&gt;경험담&lt;/h3&gt;
 
 &lt;p&gt;alsa-lib를 컴파일할 일이 생겼습니다. 그런데 configure 에서 에러가 발생합니다.&lt;code&gt;cannot find -lpython2.6&lt;/code&gt; 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하네요.&lt;/p&gt;
 
@@ -433,7 +439,7 @@ $ make&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;configure가 완료되었고, 컴파일도 성공했군요. 컴파일된 결과물은 &lt;code&gt;./src/.libs/&lt;/code&gt; 에 있습니다.&lt;/p&gt;
 
-&lt;h3 id='id1850'&gt;참고&lt;/h3&gt;
+&lt;h3 id='id3'&gt;참고&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='http://omappedia.org/wiki/ALSA_Setup#ALSA_library'&gt;http://omappedia.org/wiki/ALSA_Setup#ALSA_library&lt;/a&gt;&lt;/li&gt;
