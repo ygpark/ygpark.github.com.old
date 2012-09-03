@@ -1,6 +1,8 @@
 
 http://ygpark.github.com/index.html
 http://ygpark.github.com/tags.html
+http://ygpark.github.com/pages/kernel/chapter-kernel-debugging.html
+http://ygpark.github.com/pages/kernel/00-readme.html
 http://ygpark.github.com/pages/dreams-come-true.html
 http://ygpark.github.com/pages/progit/03-git-branching/01-chapter3.html
 http://ygpark.github.com/pages/progit/08-git-and-other-scms/01-chapter8.html
