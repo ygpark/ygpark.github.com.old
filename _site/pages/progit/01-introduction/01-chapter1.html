@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
-    <meta http-equiv="Expires" content="-1"/> 
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Cache-Control" content="No-Cache"/>
-    <meta http-equiv="Cache-Control" content="no-store"/>
+    <META HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT"> 
+    <META HTTP-EQUIV="Expires" CONTENT="-1"> 
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -205,7 +205,7 @@
 
 <p>이런 이유로 프로그래머들은 오래전에 로컬 VCS를 만들었다. 그 VCS는 관리 중인 파일의 변경 정보를 저장하려고 아주 간단한 데이터베이스를 사용했다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0101-tn.png' /></p>
+<p><img src='/images/progit/18333fig0101-tn.png' alt='' /></p>
 
 <p>그림 1-1. 로컬 버전 관리 다이어그램.</p>
 
@@ -215,7 +215,7 @@
 
 <p>프로젝트를 진행하다 보면 다른 개발자와 함께 작업해야 하는 경우가 많다. 이럴 때 생기는 문제를 해결하기 위해 CVCS(Centralized Version Control System)가 개발됐다. CVS, Subversion, Perforce 같은 시스템은 모든 파일을 관리하는 서버가 별도로 있고 많은 클라이언트가 중앙 서버에서 파일을 받아서 사용(Checkout)한다. 수년 동안 이러한 시스템들이 많은 사랑을 받았다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0102-tn.png' /></p>
+<p><img src='/images/progit/18333fig0102-tn.png' alt='' /></p>
 
 <p>그림 1-2. 중앙집중식 버전 관리 (CVCS) 다이어그램.</p>
 
@@ -227,7 +227,7 @@
 
 <p>분산형 버전 관리 시스템(DVCS)을 설명할 차례다. Git, Mecurial, Bazaar, Darcs 같은 DVCS에서는 클라이언트가 파일의 마지막 Snapshot을 Checkout 하지 않는다. 그냥 저장소를 전부 복제한다. 서버에 문제가 생기면 이 복제물로 다시 작업을 시작할 수 있다. 클라이언트 중에서 아무거나 골라도 서버를 복원할 수 있다. 모든 Checkout은 모든 데이터를 가진 진정한 백업이다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0103-tn.png' /></p>
+<p><img src='/images/progit/18333fig0103-tn.png' alt='' /></p>
 
 <p>그림 1-3. 분산형 버전 관리 시스템(DVCS) 다이어그램.</p>
 
@@ -251,13 +251,13 @@
 
 <p>Subversion과 Subversion 비슷한 놈들과 Git의 가장 큰 차이점은 데이터를 다루는 방법에 있다. 큰 틀에서 봤을 때 대부분의 VCS 시스템이 관리하는 정보는 파일들의 목록이다. CVS, Subversion, Perforce, Bazaar 등의 시스템은 파일의 집합으로 정보를 관리한다. 각 파일의 변화를 그림 1-4처럼 시간순으로 관리한다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0104-tn.png' /></p>
+<p><img src='/images/progit/18333fig0104-tn.png' alt='' /></p>
 
 <p>그림 1-4. 각 파일에 대한 변화(차이점)를 저장하는 시스템들.</p>
 
 <p>Git은 이런 식으로 데이터를 저장하지도 취급하지도 않는다. 대신 Git의 데이터는 파일 시스템의 Snapshot이라 할 수 있으며 크기가 아주 작다. Git은 Commit 하거나 프로젝트의 상태를 저장할 때마다 파일이 존재하는 그 순간을 중요하게 여긴다. 파일이 달라지지 않았으면 Git은 성능을 위해서 파일을 저장하지 않는다. 단지 이전 상태의 파일에 대한 링크만 저장한다. Git은 그림 1-5처럼 동작한다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0105-tn.png' /></p>
+<p><img src='/images/progit/18333fig0105-tn.png' alt='' /></p>
 
 <p>그림 1-5. Git은 시간순으로 프로젝트의 Snapshot을 저장한다.</p>
 
@@ -293,7 +293,7 @@
 
 <p>이 세 가지 상태는 Git 프로젝트의 세 가지 단계와 연결돼 있다. Git Directory, Working Directory, Staging Area 이 세 가지 단계를 이해하고 넘어가자.</p>
 
-<p><img alt='' src='/images/progit/18333fig0106-tn.png' /></p>
+<p><img src='/images/progit/18333fig0106-tn.png' alt='' /></p>
 
 <p>그림 1-5. Working Directory, Staging Area, Git Directory</p>
 
@@ -362,7 +362,7 @@ $ sudo make prefix=/usr/local install</code></pre>
 
 <pre><code>http://code.google.com/p/git-osx-installer</code></pre>
 
-<p><img alt='' src='/images/progit/18333fig0107-tn.png' /></p>
+<p><img src='/images/progit/18333fig0107-tn.png' alt='' /></p>
 
 <p>그림 1-7. OS X Git 인스톨러.</p>
 

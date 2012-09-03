@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
-    <meta http-equiv="Expires" content="-1"/> 
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Cache-Control" content="No-Cache"/>
-    <meta http-equiv="Cache-Control" content="no-store"/>
+    <META HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT"> 
+    <META HTTP-EQUIV="Expires" CONTENT="-1"> 
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -380,7 +380,7 @@ $ git config --global diff.external extDiff</code></pre>
 
 <p>diff 결과가 터미널에 출력되는 대신 P4Merge가 실행된다. 그리고 그림 7-1처럼 그 프로그램 안에서 보여준다:</p>
 
-<p><img alt='' src='/images/progit/18333fig0701-tn.png' /></p>
+<p><img src='/images/progit/18333fig0701-tn.png' alt='' /></p>
 
 <p>그림 7-1. P4Merge.</p>
 
@@ -646,11 +646,11 @@ $Id: 42812b7653c7b88933f8a9d6cad0ca16714b9bb3 $</code></pre>
 
 <p>Commit/Checkout할 때 사용할 필터를 직접 만들어 쓸 수 있는데, 방향에 따라 &#8220;clean&#8221; 필터와 &#8220;smudge&#8221; 필터라고 부른다. &#8220;.gitattributes&#8221; 파일에 파일 경로마다 다른 필터를 설정할 수 있다. Checkout할 때 파일을 처리하는 것이 &#8220;smudge&#8221; 필터이고(그림 7-2) 커밋할 때 처리하는 필터가 &#8220;clean&#8221; 필터이다. 이 필터로 할 수 있는 일은 무궁무진하다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0702-tn.png' /></p>
+<p><img src='/images/progit/18333fig0702-tn.png' alt='' /></p>
 
 <p>그림 7-2. &#8220;smudge&#8221; 필터는 Checkout할 때 실행된다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0703-tn.png' /></p>
+<p><img src='/images/progit/18333fig0703-tn.png' alt='' /></p>
 
 <p>그림 7-3. &#8220;clean&#8221; 필터는 파일을 Stage할 때 실행된다.</p>
 
