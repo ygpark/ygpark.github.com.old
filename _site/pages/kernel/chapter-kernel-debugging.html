@@ -183,26 +183,33 @@
 <hr />
 <h2 id='jtag_debugger_'>JTAG Debugger로 디버깅하기</h2>
 
-<p>필자는 <a href='http://ko.wikipedia.org/wiki/JTAG'>JTAG</a> 장비를 <a href='http://www.jndtech.com/'>(주)제이앤디테크社</a>의 CodeViser를 사용합니다. JTAG장비는 고가인데다가 제품별로 지원하는 프로세서가 다르므로 확인 후 구입해야합니다. 필자가 사용하는 것은 ARM11 전용입니다.</p>
+<p>필자는 JTAG장비로 <a href='http://www.jndtech.com/'>제이앤디테크社</a>의 CodeViser를 사용합니다. 저는 JTAG장비 주로 두가지 용도로 사용합니다. 하나는 Boot Loader를 NAND Flash에 다운로드하고, 다른 하나는 Linux Kernel의 디버깅 용도로 사용하는 것입니다. JTAG은 아주 멋지고 편리한 디버거입니다. 어느정도냐면 Windows의 Visual Studio보다 훨씬 더 좋습니다 :D 몇몇사람들은 JTAG이 다운로드 전용인줄로만 알고 사용하고있어서 한편으로는 안타까울때도 있습니다.</p>
 
 <h3 id='__'>디버그용 바이너리 컴파일하기</h3>
 
-<p>제이앤디테크의 홈페이지에 CVD를 사용하려면 CFLAGS로 <code>-gdwarf-2</code> 를 사용하라는 코멘트가 있습니다.</p>
+<p>리눅스 커널 소스코드를 디버그용으로 컴파일하는법을 알아보겠습니다.</p>
 
-<pre><code>CVD는 dwarf-2 형식의 ELF 파일을 지원합니다. 따라서 리눅스에서 빌드하는 경우,지원되지 않는 
+<p>CodeViser는 디버깅 정보가 dwarf2로 컴파일된 소스코드만 디버깅할 수 있습니다. 따라서 컴파일타임에 CFLAGS로 <code>-gdwarf-2</code> 를 옵션으로 사용해야만합니다.</p>
+
+<p>아래는 <a href='http://www.jndtech.com/'>제이앤디테크社</a>의 질문답변란에 올라와 있는 내용입니다. Q: 리눅스 커널 이미지를 로드했는데 심볼리스트에 아무것도 안보이는데요.</p>
+
+<pre><code>A:
+CVD는 dwarf-2 형식의 ELF 파일을 지원합니다. 따라서 리눅스에서 빌드하는 경우,지원되지 않는 
 형식으로 ELF파일이 생성 된 경우 이미지의 심볼 정보가 나타나지 않을 수 있습니다. 
 
 리눅스 커널의 Makefile의 CFLAGS 의 설정정보를 확인하여 -gstab 이나 -ggdb 가 설정되어 있다면 
 삭제 해 주시고, -gdwarf-2 를 추가해 주신 후 다시 빌드해서 테스트 해 보시기 바랍니다.</code></pre>
 
-<p>리눅스 커널의 CFLAGS는 Makefile 안에 <code>KBUILD_CFLAGS</code>와 <code>KBUILD_AFLAGS</code>로 존재합니다. CFLAGS는 C언어용, AFLAGS는 Assembly언어용입니다. 둘 다 <code>-gdwarf-2</code>로 바꿔줍니다.</p>
+<p>사실 리눅스 커널의 Makefile 안에서 FLAGS는 <code>KBUILD_CFLAGS</code>와 <code>KBUILD_AFLAGS</code>라는 이름으로 사용됩니다. 하나는 C언어용 CFLAG, 다른 하나는 Assembly언어용 AFLAGS입니다.</p>
+
+<p>여기서는 둘 다 <code>-gdwarf-2</code>로 바꾸겠습니다.</p>
 
 <pre><code>ifdef CONFIG_DEBUG_INFO
 KBUILD_CFLAGS   += -gdwarf-2
 KBUILD_AFLAGS   += -gdwarf-2
 endif</code></pre>
 
-<p>두 변수를 둘러싸고있는 <code>CONFIG_DEBUG_INFO</code>옵션이 있습니다. 이것은 커널을 디버그모드로 빌드하기위한 옵션입니다. 이 옵션이 y로 설정되어있어야만 위의 FLAG가 적용됩니다. 옵션을 활성화시키려면 <code>make menuconfig</code>를 실행하고, 메인화면에서 <code>Kernel debugging</code>을 선택한 다음 <code>Compile the kernel with debug info</code>를 선택합니다.</p>
+<p>그리고 눈여겨볼 것이 하나 있는데 두 변수를 둘러싸고있는 <code>CONFIG_DEBUG_INFO</code>옵션입니다. 이것은 커널을 디버그모드로 빌드하기위한 옵션입니다. 이 옵션이 y로 설정되어있어야만 위의 FLAG가 적용됩니다. 옵션을 활성화시키려면 <code>make menuconfig</code>를 실행하고, 메인화면에서 <code>Kernel debugging</code>을 선택한 다음 <code>Compile the kernel with debug info</code>를 선택합니다.</p>
 
 <pre><code>$ make menuconfig 
 
@@ -212,39 +219,43 @@ Kernel hacking
 
 <p>이제 저장하고 나가서 컴파일을 하면 <code>-gdwarf-2</code>가 적용된 zImage를 만들 수 있습니다.</p>
 
+<p>참고로 <code>make menuconfig</code>의 메뉴에서 <code>CONFIG_XXX</code>이 어디에 있는지 아는 방법은 <code>/</code>키를 눌러서 <code>CONFIG_XXX</code>를 입력하는 것입니다. 또한 메뉴상에서 커서가 놓여있는 위치에서 <code>?</code>를 누르면 도움말을 볼 수 있습니다.</p>
+
 <h3 id='cvd__kernel_'>CVD를 이용한 Kernel 디버깅</h3>
 
-<p>CVD를 커널 디버깅에 사용하는 방법을 알아보겠습니다. 먼저 필요한 준비물 세가지가 있습니다. 첫째 <code>-gdwarf-2</code> 로 컴파일한 zImage 파일. 압축된 커널 이미지입니다.. 둘째, vmlinux 파일. 디버깅 정보가 포함되어있습니다. 셋째 소스코드입니다.</p>
+<p>JTAG을 사용해서 Linux Kernel을 디버깅하는 방법을 알아보겠습니다.</p>
+
+<p>디버깅을 위해서는 Linux Kernel의 소스코드와 <code>-gdwarf-2</code> 로 컴파일한 zImage 파일 그리고 vmlinux 파일이 필요합니다. zImage는 Target Board에서 사용되고, vmlinux와 소스코드는 CVD에서 디버깅 정보를 추적하기위해 사용됩니다.</p>
 
 <p>보통은 소스코드를 리눅스 개발서버에서 컴파일하기 때문에 Windows에서 Linux로 접근을 한다면 samba로 연결해서 사용합니다. 여기서는 주제에서 벗어나므로 samba를 설치하는 방법은 설명하지 않겠습니다.</p>
 
 <p>준비가 되었다면 프로그램을 실행합니다.</p>
 
-<p><img alt='' src='/images/kernel/20120903-kernel-debug-01.png' /></p>
+<p><img src='/images/kernel/20120903-kernel-debug-01.png' alt='' /></p>
 
 <p>그림 1. CVD 프로그램. 메인화면</p>
 
 <p>메뉴에서 <code>Program &gt; Load</code> 을 선택하여 vmlinux 파일을 선택합니다. 이 때, 세가지 체크박스 <code>No-code</code>, <code>Multi-image</code>, <code>Keep-state</code>를 선택합니다. 파일을 로드하는 시간은 수초정도 걸립니다.</p>
 
-<p><img alt='' src='/images/kernel/20120903-kernel-debug-02.png' /></p>
+<p><img src='/images/kernel/20120903-kernel-debug-02.png' alt='' /></p>
 
 <p>그림 2. CVD 프로그램. 메뉴 &gt; Program &gt; Load</p>
 
 <p>로드가 되었다면 파일이 디버깅 가능한 dwarf2인지 확인해야합니다. 메뉴에서 <code>Symbol &gt; Program List</code>를 선택하여 확인할 수 있습니다.</p>
 
-<p><img alt='' src='/images/kernel/20120903-kernel-debug-03.png' /></p>
+<p><img src='/images/kernel/20120903-kernel-debug-03.png' alt='' /></p>
 
 <p>그림 3. CVD 프로그램. 메뉴 &gt; Symbol &gt; Program List</p>
 
 <p>마지막으로 F5키를 눌러 Target Board에 연결하면 됩니다. 또는 상단의 Connect 아이콘을 클릭합니다.</p>
 
-<p><img alt='' src='/images/kernel/20120903-kernel-debug-04.png' /></p>
+<p><img src='/images/kernel/20120903-kernel-debug-04.png' alt='' /></p>
 
 <p>그림 4. CVD 프로그램. 메뉴 &gt; Config &gt; Interface</p>
 
 <p>Target Board에 연결되면 현재 실행중인 라인에서 실행이 중지됩니다. 이 때, CVD는 메모리에서 실행되고있는 실제 assembly코드와 C소스코드를 매치시켜 보여줍니다.</p>
 
-<p><img alt='' src='/images/kernel/20120903-kernel-debug-05.png' /></p>
+<p><img src='/images/kernel/20120903-kernel-debug-05.png' alt='' /></p>
 
 <p>그림 5. CVD 프로그램.</p>
   </div>

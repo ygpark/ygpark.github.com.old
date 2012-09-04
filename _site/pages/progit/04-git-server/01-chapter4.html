@@ -512,7 +512,7 @@ exec git-update-server-info</code></pre>
 
 <p>프로젝트 저장소를 단순히 읽거나 쓰는 것에 대한 설정은 다뤘다. 이제는 웹 기반 인터페이스를 설정해 보자. Git은 웹에서 저장소들을 조회할 수 있는 GitWeb이라는 CGI 스크립트를 제공한다. <code>http://git.kernel.org</code>같은 사이트에서 GitWeb을 구경할 수 있다(그림 4-1).</p>
 
-<p><img alt='' src='/images/progit/18333fig0401-tn.png' /></p>
+<p><img src='/images/progit/18333fig0401-tn.png' alt='' /></p>
 
 <p>그림 4-1. Git 웹용 UI, GitWeb</p>
 
@@ -964,19 +964,19 @@ gitweb = yes</code></pre>
 
 <p>먼저 무료 계정을 하나 만든다. 가격 정책에 대해 알려주며 가입을 시작할 수 있는 <code>http://github.com/plans</code>에 방문하여 &#8220;Sign up&#8221; 버튼을 클릭한다. 그러면 가입 페이지로 이동한다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0402-tn.png' /></p>
+<p><img src='/images/progit/18333fig0402-tn.png' alt='' /></p>
 
 <p>그림 4-2. GitHub 가격 정책 페이지.</p>
 
 <p>아직 등록되지 않은 사용자 이름을 입력하고 e-mail 주소와 암호를 입력한다(그림 4-3).</p>
 
-<p><img alt='' src='/images/progit/18333fig0403-tn.png' /></p>
+<p><img src='/images/progit/18333fig0403-tn.png' alt='' /></p>
 
 <p>그림 4-3. GitHub 가입 폼.</p>
 
 <p>그리고 SSH 공개키가 있으면 바로 등록한다. SSH 키를 만드는 방법은 &#8220;초 간단 뚝딱&#8221; 절에서 이미 설명했다. 그 공개키 파일의 내용을 복사해서 SSH 공개키 입력 박스에 붙여 넣는다. &#8220;explain ssh keys&#8221;링크를 클릭하면 key를 생성하는 방법이 자세히 설명돼 있다. 주요 운영체제에서 하는 방법이 모두 설명돼 있다. &#8220;I agree, sign me up&#8221; 버튼을 클릭하면 자신만의 대쉬보드 페이지를 볼 수 있을 것이다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0404-tn.png' /></p>
+<p><img src='/images/progit/18333fig0404-tn.png' alt='' /></p>
 
 <p>그림 4-4. GitHub 사용자 대쉬보드</p>
 
@@ -986,19 +986,19 @@ gitweb = yes</code></pre>
 
 <p><code>Your Repositories</code>옆에 있는 &#8220;create a new one&#8221; 링크를 클릭하면 저장소를 만드는 입력 폼을 볼 수 있다(그림 4-5).</p>
 
-<p><img alt='' src='/images/progit/18333fig0405-tn.png' /></p>
+<p><img src='/images/progit/18333fig0405-tn.png' alt='' /></p>
 
 <p>그림 4-5. GitHub의 저장소를 생성하는 폼.</p>
 
 <p>이 폼에 프로젝트 이름과 프로젝트 설명을 적는다. 다 적은 후에 &#8220;Create Repository&#8221; 버튼을 클릭하면 GitHub에 저장소가 생긴다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0406-tn.png' /></p>
+<p><img src='/images/progit/18333fig0406-tn.png' alt='' /></p>
 
 <p>그림 4-6. GitHub 프로젝트 정보</p>
 
 <p>이 저장소에는 아직 코드가 없어서 GitHub은 프로젝트를 새로 만드는 방법, 이미 있는 Git 프로젝트를 Push하는 법, 공개된 Subversion 저장소에서 프로젝트를 가져오는(Import) 방법 등을 보여준다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0407-tn.png' /></p>
+<p><img src='/images/progit/18333fig0407-tn.png' alt='' /></p>
 
 <p>그림 4-7. 새 저장소를 위한 사용설명서</p>
 
@@ -1015,7 +1015,7 @@ $ git push origin master</code></pre>
 
 <p>이제 프로젝트가 GitHub에서 서비스되게 하였으니 공유하고 싶은 사람에게 URL을 알려 주면 된다. URL은 <code>http://github.com/testinguser/iphone_project</code>이다. 그리고 이 저장소의 정보를 잘 살펴보면 Git URL이 두 개인 것을 발견할 수 있을 것이다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0408-tn.png' /></p>
+<p><img src='/images/progit/18333fig0408-tn.png' alt='' /></p>
 
 <p>그림 4-8. 프로젝트의 공개 URL과 비공개 URL.</p>
 
@@ -1027,7 +1027,7 @@ $ git push origin master</code></pre>
 
 <p>GitHub는 공개 중인 Subversion 프로젝트를 Git 프로젝트로 만들어 준다. 사용설명서 하단에 있는 &#8220;Subversion에서 Import하기&#8221; 링크를 클릭하면 임포트 폼을 볼 수 있고 거기에 Subversion 프로젝트의 URL을 넣는다(그림 4-9).</p>
 
-<p><img alt='' src='/images/progit/18333fig0409-tn.png' /></p>
+<p><img src='/images/progit/18333fig0409-tn.png' alt='' /></p>
 
 <p>그림 4-9. Subversion 프로젝트를 Import하는 화면</p>
 
@@ -1039,19 +1039,19 @@ $ git push origin master</code></pre>
 
 <p>프로젝트 페이지에 있는 Admin 버튼을 클릭해서 관리 페이지로 이동한다(그림 4-10).</p>
 
-<p><img alt='' src='/images/progit/18333fig0410-tn.png' /></p>
+<p><img src='/images/progit/18333fig0410-tn.png' alt='' /></p>
 
 <p>그림 4-10. GitHub의 프로젝트 관리 페이지</p>
 
 <p>다른 사람에게 쓰기 권한을 주려면 “Add another collaborator” 링크를 클릭한다. 그러면 텍스트 박스가 새로 나타나는 데 거기에 사용자 이름을 입력한다. 사용자이름을 입력하기 시작하면 자동으로 시스템에 존재하는 사용자를 찾아서 보여 준다. 원하는 사용자를 찾으면 Add 버튼을 클릭해서 그 사용자를 동료로 만든다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0411-tn.png' /></p>
+<p><img src='/images/progit/18333fig0411-tn.png' alt='' /></p>
 
 <p>그림 4-11. 프로젝트에 동료 추가하기</p>
 
 <p>추가한 사람은 동료 목록 박스에서 모두 확인할 수 있다(그림 4-12).</p>
 
-<p><img alt='' src='/images/progit/18333fig0412-tn.png' /></p>
+<p><img src='/images/progit/18333fig0412-tn.png' alt='' /></p>
 
 <p>그림 4-12. 프로젝트 동료들.</p>
 
@@ -1061,7 +1061,7 @@ $ git push origin master</code></pre>
 
 <p>Subversion에서 Import했거나 로컬의 프로젝트를 Push하고 나면 프로젝트 메인 페이지가 그림 4-13같이 바뀐다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0413-tn.png' /></p>
+<p><img src='/images/progit/18333fig0413-tn.png' alt='' /></p>
 
 <p>그림 4-13. GitHub의 프로젝트 메인 페이지</p>
 
@@ -1075,13 +1075,13 @@ $ git push origin master</code></pre>
 
 <p>프로젝트 페이지에 들어가서 상단의 &#8220;fork&#8221; 버튼을 클릭하여 프로젝트를 복제한다(그림 4-14). 그림 4-14의 예는 mojombo/chronic 프로젝트 페이지이다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0414-tn.png' /></p>
+<p><img src='/images/progit/18333fig0414-tn.png' alt='' /></p>
 
 <p>그림 4-14. 어떤 저장소든지 &#8220;fork&#8221; 버튼을 클릭하면 Push할 수 있는 저장소를 얻을 수 있다.</p>
 
 <p>클릭하는 순간, 이 프로젝트를 즉시 Fork한다(그림 4-15).</p>
 
-<p><img alt='' src='/images/progit/18333fig0415-tn.png' /></p>
+<p><img src='/images/progit/18333fig0415-tn.png' alt='' /></p>
 
 <p>그림 4-15. Fork한 프로젝트</p>
 

@@ -4,7 +4,7 @@
  <title>박영기 BLOG</title>
  <link href="http://ygpark.github.com/atom.xml" rel="self"/>
  <link href="http://ygpark.github.com"/>
- <updated>2012-09-03T18:31:12+09:00</updated>
+ <updated>2012-09-04T10:06:54+09:00</updated>
  <id>http://ygpark.github.com</id>
  <author>
    <name>Young-Gi Park</name>
@@ -140,7 +140,7 @@ $ sudo genxref&lt;/code&gt;&lt;/pre&gt;
    <id>http://ygpark.github.com/Git/2012/08/28/gitweb-for-ubuntu</id>
    <content type="html">&lt;p&gt;이 문서는 Git 사용자에게 꼭 필요한 필수 유틸리티인 gitweb의 설치에 대해서 설명한다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt='' src='/images/gitweb/gitweb.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src='/images/gitweb/gitweb.png' alt='' /&gt;&lt;/p&gt;
 
 &lt;p&gt;그림 1. kernel.org 사이트의 gitweb&lt;/p&gt;
 
