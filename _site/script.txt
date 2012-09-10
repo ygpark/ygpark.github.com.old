@@ -1,2 +1,0 @@
-rake post title="This is title"
-rake page title="This is title"

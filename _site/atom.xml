@@ -4,7 +4,7 @@
  <title>박영기 BLOG</title>
  <link href="http://ygpark.github.com/atom.xml" rel="self"/>
  <link href="http://ygpark.github.com"/>
- <updated>2012-09-07T09:36:34+09:00</updated>
+ <updated>2012-09-10T17:05:39+09:00</updated>
  <id>http://ygpark.github.com</id>
  <author>
    <name>Young-Gi Park</name>
@@ -13,13 +13,43 @@
 
  
  <entry>
+   <title>윈도우8에 ADB/fastboot 드라이버 설치하기</title>
+   <link href="http://ygpark.github.com/Android/2012/09/07/install-adbfastboot-driver-on-windows-8"/>
+   <updated>2012-09-07T00:00:00+09:00</updated>
+   <id>http://ygpark.github.com/Android/2012/09/07/install-adbfastboot-driver-on-windows-8</id>
+   <content type="html">&lt;p&gt;&lt;img alt='안드로이드 이미지' src='/images/blog/android.png' /&gt; &lt;img src='/images/blog/plus.png' alt='plus 이미지' style='margin:60px 20px' width='50px' /&gt; &lt;img alt='윈도우8 이미지' src='/images/blog/windows8.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;안드로이드 개발하려면 윈도우에 adb/fastboot 드라이버가 설치되어 있어야 합니다. 그런데 윈도우8에는 드라이버가 설치되지 않고 장치관리자에 느낌표가 붙은 &lt;code&gt;Android 1.0&lt;/code&gt;로 보입니다. 이 경우 다음 순서대로 진행하면 드라이버를 설치할 수 있습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;ADB driver를 설치합니다. &lt;br /&gt; &lt;a href='http://ygpark-data.tistory.com/1'&gt;여기서&lt;/a&gt; 다운로드 받으세요.&lt;br /&gt; 이 파일은 압축파일입니다. 압축을 풀고, 안에 들어있는 inf파일들을 설치합니다.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;USB Driver를 설치합니다. &lt;br /&gt; &lt;a href='http://ygpark-data.tistory.com/2'&gt;여기서&lt;/a&gt; 다운로드 받으세요.&lt;br /&gt; 이 파일은 설치파일입니다. 압축을 풀고 USBDrv.exe파일을 실행시켜 드라이버를 설치합니다.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;모든 설치가 완료되었습니다. &lt;br /&gt; 이제 장치관리자에서 &lt;code&gt;Android 1.0&lt;/code&gt;이 사라진 것을 확인할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='id783'&gt;참조&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://forum.xda-developers.com/showthread.php?t=1583801'&gt;http://forum.xda-developers.com/showthread.php?t=1583801&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>lxr 설치하기 (Ubuntu 10.04)</title>
    <link href="http://ygpark.github.com/Linux Kernel Tip/2012/08/30/lxr-install-on-ubuntu"/>
    <updated>2012-08-30T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux Kernel Tip/2012/08/30/lxr-install-on-ubuntu</id>
    <content type="html">&lt;p&gt;http://lxr.sourceforge.net/에서 내려받을 수 있는 리눅스 교차 참조기인 lxr은 웹 브라우저로 커널 트리를 탐색하도록 커널 심볼 정의와 사용처를 하이퍼링크로 연결한다.&lt;/p&gt;
 
-&lt;h1 id='id91'&gt;요구사항&lt;/h1&gt;
+&lt;h1 id='id781'&gt;요구사항&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Apache – Web server&lt;/li&gt;
@@ -29,7 +59,7 @@
 &lt;li&gt;Perl – Reference generator&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id='id92'&gt;설치&lt;/h1&gt;
+&lt;h1 id='id782'&gt;설치&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sudo apt-get install lxr perl apache2&lt;/code&gt;&lt;/pre&gt;
 
@@ -140,7 +170,7 @@ $ sudo genxref&lt;/code&gt;&lt;/pre&gt;
    <id>http://ygpark.github.com/Git/2012/08/28/gitweb-for-ubuntu</id>
    <content type="html">&lt;p&gt;이 문서는 Git 사용자에게 꼭 필요한 필수 유틸리티인 gitweb의 설치에 대해서 설명한다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src='/images/gitweb/gitweb.png' alt='' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt='' src='/images/gitweb/gitweb.png' /&gt;&lt;/p&gt;
 
 &lt;p&gt;그림 1. kernel.org 사이트의 gitweb&lt;/p&gt;
 
@@ -173,7 +203,7 @@ $ cd username
 $ ln -s /path/to/repo2/.git repo2.git
 $ ln -s /path/to/repo3/.git repo3.git&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id='id90'&gt;참조&lt;/h3&gt;
+&lt;h3 id='id780'&gt;참조&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='http://wiki.kldp.org/wiki.php/gitweb'&gt;http://wiki.kldp.org/wiki.php/gitweb&lt;/a&gt;&lt;/li&gt;
@@ -209,7 +239,7 @@ $ make xxx_defconfig&lt;/code&gt;&lt;/pre&gt;
    <id>http://ygpark.github.com/Linux/2012/08/27/gdb-manual</id>
    <content type="html">&lt;p&gt;core dump란 충돌이 발생했던 순간의 memory를 저장한 파일을 말한다. gdb는 core dump 파일을 불러와서 디버깅을 하는 기능을 제공한다. 하지만 그전에 core dump가 저장될 수 있도록 하는 설정이 필요하다.&lt;/p&gt;
 
-&lt;h2 id='id88'&gt;준비작업&lt;/h2&gt;
+&lt;h2 id='id778'&gt;준비작업&lt;/h2&gt;
 
 &lt;p&gt;core dump가 저장될 수 있도록 하는 설정은 &lt;code&gt;ulimit&lt;/code&gt; 명령을 사용한다.&lt;/p&gt;
 
@@ -257,7 +287,7 @@ file locks                      (-x) unlimited&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;위와 같이 설정이 되었다면, 프로그램이 죽을 때 현재 디렉토리($PWD)에 core dump 파일이 생긴다.&lt;/p&gt;
 
-&lt;h2 id='id89'&gt;사용법&lt;/h2&gt;
+&lt;h2 id='id779'&gt;사용법&lt;/h2&gt;
 
 &lt;p&gt;core dump를 이용한 디버깅 방법은 다음과 같다:&lt;/p&gt;
 
@@ -391,7 +421,7 @@ find . -name Kconfig | xargs grep --color -n $1&lt;/code&gt;&lt;/pre&gt;</conten
    <link href="http://ygpark.github.com/Linux/2012/08/24/alsa-lib-1016-cross-compile-for-arm"/>
    <updated>2012-08-24T00:00:00+09:00</updated>
    <id>http://ygpark.github.com/Linux/2012/08/24/alsa-lib-1016-cross-compile-for-arm</id>
-   <content type="html">&lt;h3 id='id85'&gt;요약&lt;/h3&gt;
+   <content type="html">&lt;h3 id='id775'&gt;요약&lt;/h3&gt;
 
 &lt;p&gt;기본적인 크로스컴파일 방법과 configure시 libpython이 없다는 에러가 발생했을 때 대처법입니다.&lt;/p&gt;
 
@@ -403,7 +433,7 @@ $ make&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;$ CC=arm-linux-gcc ./configure --target=arm-linux --host=i686-linux --disable-python
 $ make&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id='id86'&gt;경험담&lt;/h3&gt;
+&lt;h3 id='id776'&gt;경험담&lt;/h3&gt;
 
 &lt;p&gt;alsa-lib를 컴파일할 일이 생겼습니다. 그런데 configure 에서 에러가 발생합니다.&lt;code&gt;cannot find -lpython2.6&lt;/code&gt; 뭐라는걸로 보아서 python 라이브러리가 필요한듯 하네요.&lt;/p&gt;
 
@@ -439,7 +469,7 @@ $ make&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;configure가 완료되었고, 컴파일도 성공했군요. 컴파일된 결과물은 &lt;code&gt;./src/.libs/&lt;/code&gt; 에 있습니다.&lt;/p&gt;
 
-&lt;h3 id='id87'&gt;참고&lt;/h3&gt;
+&lt;h3 id='id777'&gt;참고&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='http://omappedia.org/wiki/ALSA_Setup#ALSA_library'&gt;http://omappedia.org/wiki/ALSA_Setup#ALSA_library&lt;/a&gt;&lt;/li&gt;

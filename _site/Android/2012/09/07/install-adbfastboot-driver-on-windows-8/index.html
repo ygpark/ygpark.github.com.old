@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>gitweb 설치 - 박영기 BLOG</title>
+    <title>윈도우8에 ADB/fastboot 드라이버 설치하기 - 박영기 BLOG</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
@@ -168,62 +168,43 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>gitweb 설치 <!-- <small>Supporting tagline</small>--></h1>
+  <h1>윈도우8에 ADB/fastboot 드라이버 설치하기 <!-- <small>Supporting tagline</small>--></h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>이 문서는 Git 사용자에게 꼭 필요한 필수 유틸리티인 gitweb의 설치에 대해서 설명한다.</p>
+    <p><img alt='안드로이드 이미지' src='/images/blog/android.png' /> <img src='/images/blog/plus.png' alt='plus 이미지' style='margin:60px 20px' width='50px' /> <img alt='윈도우8 이미지' src='/images/blog/windows8.png' /></p>
 
-<p><img alt='' src='/images/gitweb/gitweb.png' /></p>
+<p>안드로이드 개발하려면 윈도우에 adb/fastboot 드라이버가 설치되어 있어야 합니다. 그런데 윈도우8에는 드라이버가 설치되지 않고 장치관리자에 느낌표가 붙은 <code>Android 1.0</code>로 보입니다. 이 경우 다음 순서대로 진행하면 드라이버를 설치할 수 있습니다.</p>
 
-<p>그림 1. kernel.org 사이트의 gitweb</p>
+<ol>
+<li>
+<p>ADB driver를 설치합니다. <br /> <a href='http://ygpark-data.tistory.com/1'>여기서</a> 다운로드 받으세요.<br /> 이 파일은 압축파일입니다. 압축을 풀고, 안에 들어있는 inf파일들을 설치합니다.</p>
+</li>
 
-<h3 id='gitweb_'>gitweb 설치</h3>
+<li>
+<p>USB Driver를 설치합니다. <br /> <a href='http://ygpark-data.tistory.com/2'>여기서</a> 다운로드 받으세요.<br /> 이 파일은 설치파일입니다. 압축을 풀고 USBDrv.exe파일을 실행시켜 드라이버를 설치합니다.</p>
+</li>
 
-<p>이렇게 입력하면 웹으로 gitweb에 접근할 수 있다.</p>
+<li>
+<p>모든 설치가 완료되었습니다. <br /> 이제 장치관리자에서 <code>Android 1.0</code>이 사라진 것을 확인할 수 있습니다.</p>
+</li>
+</ol>
 
-<pre><code>$ sudo apt-get install apache2 git-core gitweb
-
-$ cd /var/www/
-$ mkdir gitweb
-$ cd gitweb
-$ ln -s /usr/share/gitweb/* .</code></pre>
-
-<h3 id='_'>프로젝트 설정</h3>
-
-<p>다음으로 gitweb에 프로젝트를 추가하는 방법이다.</p>
-
-<p>기본적인 사용법은 아래와 같고</p>
-
-<pre><code>$ cd /var/cache/git
-$ ln -s /path/to/repo1/.git repo1.git</code></pre>
-
-<p>다음과 같이 디렉토리를 만들어서 사용자/프로젝트별로 구분할 수도 있다.</p>
-
-<pre><code>$ cd /var/cache/git
-$ mkdir username
-$ cd username
-
-$ ln -s /path/to/repo2/.git repo2.git
-$ ln -s /path/to/repo3/.git repo3.git</code></pre>
-
-<h3 id='id780'>참조</h3>
+<h2 id='id783'>참조</h2>
 
 <ul>
-<li><a href='http://wiki.kldp.org/wiki.php/gitweb'>http://wiki.kldp.org/wiki.php/gitweb</a></li>
-
-<li><a href='http://kldp.org/node/100726'>http://kldp.org/node/100726</a></li>
+<li><a href='http://forum.xda-developers.com/showthread.php?t=1583801'>http://forum.xda-developers.com/showthread.php?t=1583801</a></li>
 </ul>
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/Linux Kernel Tip/2012/08/28/creating-new-linux-kernel-defconfig" title="Linux Kernel - 새 defconfig 만들기">&larr; Previous</a></li>
+        <li class="prev"><a href="/Linux Kernel Tip/2012/08/30/lxr-install-on-ubuntu" title="lxr 설치하기 (Ubuntu 10.04)">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/Linux Kernel Tip/2012/08/30/lxr-install-on-ubuntu" title="lxr 설치하기 (Ubuntu 10.04)">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a>
       
       </ul>
     </div>
@@ -253,7 +234,7 @@ $ ln -s /path/to/repo3/.git repo3.git</code></pre>
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>28 August 2012</span></div>
+    <div class="date"><span>07 September 2012</span></div>
 
   
     <h4>Tags</h4>
@@ -264,13 +245,13 @@ $ ln -s /path/to/repo3/.git repo3.git</code></pre>
 
   
      
-    	<li><a href="/tags.html#git-ref">git <span>1</span></a></li>
+    	<li><a href="/tags.html#android-ref">android <span>1</span></a></li>
      
-    	<li><a href="/tags.html#gitweb-ref">gitweb <span>1</span></a></li>
+    	<li><a href="/tags.html#windows8-ref">windows8 <span>1</span></a></li>
      
-    	<li><a href="/tags.html#linux-ref">linux <span>3</span></a></li>
+    	<li><a href="/tags.html#adb-ref">adb <span>1</span></a></li>
      
-    	<li><a href="/tags.html#ubuntu-ref">ubuntu <span>1</span></a></li>
+    	<li><a href="/tags.html#fastboot-ref">fastboot <span>1</span></a></li>
     
   
 

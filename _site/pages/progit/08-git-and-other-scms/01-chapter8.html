@@ -218,7 +218,7 @@
 
 <p>히스토리를 재작성하지 말아야 하고 Push를 재전송하지도 말아야 한다. 동시에 같은 Git 저장소에 Push하지도 말아야 한다. Subversion은 단순히 일직선의 히스토리만 가질 수 있다. 우리가 일부는 SVN을 일부는 Git을 사용하는 팀에 있을 때에는 협업을 위해서 모두가 SVN Server를 사용해야 한다. 그래야 삶이 편하다.</p>
 
-<h3 id='id95'>설정하기</h3>
+<h3 id='id786'>설정하기</h3>
 
 <p>이 기능을 써보기 위해 우리는 SVN 저장소 하나가 필요하다. 물론 쓰기 권한도 있어야 한다. 아래 나오는 예제를 써보려면 필자의 test 저장소를 하나 복사해야 한다. 최근의 Subversion(1.4 이상) 에 포함된 <code>svnsync</code>라는 도구를 사용하여 SVN 저장소를 복사할 수 있다. 테스트를 해보기 위해 필자는 Google Code에 새로 Subversion 저장소를 하나 만들고 <code>protobuf</code> 라는 프로젝트의 일부 코드를 복사했다. <code>protobuf</code>는 네트워크 전송에 필요한 구조화된 데이터(프로토콜 같은 것들)의 인코딩을 도와주는 도구이다.</p>
 
@@ -250,7 +250,7 @@ Committed revision 3.
 
 <p>이 명령은 몇 분 걸리지 않지만, 저장하는 위치가 로컬이 아니라 리모트 서버라면 시간이 많이 걸린다. 커밋이 100개 이하라고 해도 오래 걸릴 것이다. Subversion은 한번에 커밋을 하나씩 받아서 Push하기 때문에 엄청나게 비효율적이다. 하지만 저장소를 복사하는 다른 방법은 없다.</p>
 
-<h3 id='id96'>시작하기</h3>
+<h3 id='id787'>시작하기</h3>
 
 <p>이제 갖고 놀 Subversion 저장소가 하나 준비되었다. <code>git svn clone</code> 명령으로 Subversion 저장소 전체를 Git 저장소로 가져올 수 있다. 만약 Subversion 저장소가 로컬에 있는 것이 아니라 리모트 서버에 있다면 <code>file:///tmp/test-svn</code> 부분에 서버 저장소의 URL을 적어 주면 된다.</p>
 
@@ -550,7 +550,7 @@ Last Changed Date: 2009-05-02 16:07:37 -0700 (Sat, 02 May 2009)</code></pre>
 
 <p>다른 VCS를 사용하는 프로젝트를 Git으로 옮기고 싶다면 우선 프로젝트를 Git으로 이전(Migrate)해야 한다. 이번 절에서는 Git에 들어 있는 Importer를 살펴보고 직접 Importer를 만드는 방법을 알아본다.</p>
 
-<h3 id='id97'>가져오기</h3>
+<h3 id='id788'>가져오기</h3>
 
 <p>널리 사용되는 Subversion과 Perforce로부터 프로젝트를 이전하는 방법을 살펴본다. 이 두 VCS에서 Git으로 이전하고자 하는 사람이 많고 Importer도 Git에 이미 들어 있다.</p>
 
@@ -887,7 +887,7 @@ file.rb  lib</code></pre>
 
 <p><code>fast-import</code> 명령으로 할 수 있는 일은 훨씬 더 많다. 모드를 설정하하고, 바이너리 데이터를 다루고, 브랜치를 여러개 다루고, Merge 시킬 수 도 있고, Tag를 달 수 도, 진행상황을 보여 주고, 등등 무수히 많은 일을 할 수 있다. Git 소스의 <code>contrib/fast-import</code> 디렉토리에 훨씬 복잡한 상황을 다루는 예제가 많다. 그 중 <code>git-p4</code> 스크립트가 좋은 예제이다.</p>
 
-<h2 id='id98'>요약</h2>
+<h2 id='id789'>요약</h2>
 
 <p>Subversion 프로젝트에서 Git을 사용하거나, 다른 VCS 저장소를 Git 저장소로 손실 없이 옮기는 방법에 대해 알아 봤다. 다음장에서는 Git 내부를 까볼 것이다. 필요하다면 바이트 하나하나 다룰 수 있는 수준이 될 것이다.</p>
   </div>
