@@ -4,6 +4,8 @@ http://ygpark.github.com/tags.html
 http://ygpark.github.com/pages/kernel/chapter-kernel-debugging.html
 http://ygpark.github.com/pages/kernel/00-readme.html
 http://ygpark.github.com/pages/dreams-come-true.html
+http://ygpark.github.com/pages/s3c6410/ch-11-DMAC.html
+http://ygpark.github.com/pages/s3c6410/ch-00-TOC.html
 http://ygpark.github.com/pages/progit/03-git-branching/01-chapter3.html
 http://ygpark.github.com/pages/progit/08-git-and-other-scms/01-chapter8.html
 http://ygpark.github.com/pages/progit/05-distributed-git/01-chapter5.html

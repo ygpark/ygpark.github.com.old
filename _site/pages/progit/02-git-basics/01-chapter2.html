@@ -129,6 +129,14 @@
   
     
       
+    
+  
+    
+      
+    
+  
+    
+      
       	
       	<li><a href="/pages.html">Pages</a></li>
       	
@@ -246,7 +254,7 @@ $ git commit -m &#39;initial project version&#39;</code></pre>
 
 <p>마지막 커밋 이후 아직 아무것도 수정하지 않은 상태에서 어떤 파일이 수정되면 Git은 그 즉시 파일을 Modified 상태로 인식한다. 그리고 이 수정한 파일을 Stage하고 Staged 상태인 파일들을 커밋한다. 이 라이프사이클을 그림 2-1처럼 계속 반복한다.</p>
 
-<p><img src='/images/progit/18333fig0201-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0201-tn.png' /></p>
 
 <p>그림 2-1. 파일의 라이프사이클</p>
 
@@ -819,7 +827,7 @@ b0ad11e - pull: allow &quot;git pull origin $something:$cur</code></pre>
 
 <p>GUI 도구로 커밋 히스토리를 시각화하고 싶다면 gitk를 사용할 수 있다. gitk는 Tcl/Tk 프로그램이고 <code>git log</code> 명령을 시각화해주는 도구다. gitk는 <code>git log</code> 명령이 지원하는 필터링 옵션을 거의 모두 지원한다. 프로젝트 디렉토리에서 gitk를 실행하면 그림 2-2처럼 보일 것이다.</p>
 
-<p><img src='/images/progit/18333fig0202-tn.png' alt='' /></p>
+<p><img alt='' src='/images/progit/18333fig0202-tn.png' /></p>
 
 <p>그림 2-2. gitk의 히스토리</p>
 
@@ -1258,7 +1266,7 @@ To git@github.com:schacon/simplegit.git
 
 <p>Git의 기초를 마치기 전에 Git을 좀 더 쉽고 편안하게 쓸 수 있게 만들어 줄 몇 가지 팁과 트릭도 설명한다. 이런 팁 없이 Git을 사용하는 사람들도 많다. 우리는 이 책에서 더는 이런 팁을 거론하지 않을 것이고 당신이 이런 팁을 알고 있다고 가정할 것이다. 그래서 알고 있는 것이 좋다.</p>
 
-<h3 id='id42'>자동완성</h3>
+<h3 id='id1375'>자동완성</h3>
 
 <p>Bash 쉘을 쓰고 있다면 멋진 자동완성(Auto-completion) 기능을 사용할 수 있다. Git의 소스코드를 다운받아 <code>contrib/completion</code> 디렉토리를 살펴보면 <code>git-completion.bash</code>라는 파일이 있을 것이다. 그 파일을 홈 디렉토리에 카피하고 <code>.bashrc</code> 파일에 다음과 같은 내용을 추가하자:</p>
 
@@ -1321,7 +1329,7 @@ Date:   Tue Aug 26 19:48:51 2008 +0800
 
 <pre><code>$ git config --global alias.visual &quot;!gitk&quot;</code></pre>
 
-<h2 id='id43'>요약</h2>
+<h2 id='id1376'>요약</h2>
 
 <p>이제 우리는 로컬에서 사용할 수 있는 Git 명령에 대한 기본 지식은 갖추었다. 저장소를 만들고 Clone하는 방법, 수정하고 나서 Stage하고 커밋하는 방법, 저장소의 히스토리를 조회하는 방법 등을 살펴보았다. 이어지는 장에서는 Git의 가장 강력한 기능인 브랜치 모델을 살펴볼 것이다.</p>
   </div>
