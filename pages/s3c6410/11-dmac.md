@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "S3C6410 USER's MANUAL"
+title: "S3C6410 USERS MANUAL"
 description: ""
 ---
 {% include JB/setup %}
@@ -57,7 +57,7 @@ DMA error가 발생하면 프로세서로 인터럽트가 발생할 수 있다. 
 
 ##11.4 DMA SOURCES
 
-6410은 64개의 DMA source를 아래 테이블과 같이 지원한다. 시스템 컨트롤러에 있는 SDMA_SEL 레지스터의 리셋값은 `0x0` 이고, SDMA 선택이라는 의미이다. 그래서 설정은 일반적인 DMA를 사용하기위해서 1로 설정해한다. 더 많은 정보는 시스템 컨트롤러 파트를 참고하기 바란다. 
+6410은 64개의 DMA source를 아래 테이블과 같이 지원한다. 시스템 컨트롤러에 있는 SDMA_SEL 레지스터의 리셋값은 `0x0` 이고, SDMA 선택이라는 의미이다. 그래서 설정은 일반적인 DMA를 사용하기위해서 1로 설정해한다. 더 많은 정보가 필요하면 시스템 컨트롤러 파트를 참고하라.
 
 ![figure-11-dma-source.png](/images/s3c6410/figure-11-dma-source.png)
 

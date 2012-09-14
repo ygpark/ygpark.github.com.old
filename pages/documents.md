@@ -8,6 +8,8 @@ description: ""
 ##Git
 [Pro Git](/pages/progit/00-readme.html)
 
+##번역
+[S3C6410 UM](/pages/s3c6410/00-readme.html)
 
 ##Linux Kernel
 [전투 Linux Kernel 개발자 되기](/pages/kernel/00-readme.html)
