@@ -323,7 +323,7 @@ blob</code></pre>
 
 <p>Git이 저장하는 데이터는 대강 그림 9-1과 같다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0901-tn.png' /></p>
+<p><img src='/images/progit/18333fig0901-tn.png' alt='' /></p>
 
 <p>그림 9-1. 단순화한 Git 데이터 모델.</p>
 
@@ -372,7 +372,7 @@ $ git cat-file -p 3c4e9cd789d88d8d89c1073707c3585e41b0e614
 
 <p>지금 만든 Tree 개체로 Working Directory를 만들면 파일이 두 개와 <code>bak</code>이라는 하위 디렉토리가 있을 것이다. 그리고 <code>bak</code> 디렉토리 안에는 test.txt 파일의 처음 버전이 들어 있다. Git은 그림 9-2와 같은 구조로 데이터를 저장한다고 생각하면 된다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0902-tn.png' /></p>
+<p><img src='/images/progit/18333fig0902-tn.png' alt='' /></p>
 
 <p>그림 9-2. Git 데이터 구조.</p>
 
@@ -450,7 +450,7 @@ Date:   Fri May 22 18:09:34 2009 -0700
 
 <p>내부의 포인터를 따라가면 그림 9-3과 같은 그래프가 그려진다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0903-tn.png' /></p>
+<p><img src='/images/progit/18333fig0903-tn.png' alt='' /></p>
 
 <p>그림 9-3. Git 저장소 내의 모든 개체.</p>
 
@@ -536,7 +536,7 @@ fdf4fc3344e67ab068f836878b6c4951e3b15f3d first commit</code></pre>
 
 <p>이제 Git 데이터베이스는 그림 9-4처럼 보인다.</p>
 
-<p><img alt='' src='/images/progit/18333fig0904-tn.png' /></p>
+<p><img src='/images/progit/18333fig0904-tn.png' alt='' /></p>
 
 <p>그림 9-4. 브랜치 레퍼런스가 추가된 Git 데이터베이스</p>
 
@@ -972,7 +972,7 @@ walk a11bef06a3f659402fe7563abf99ad00de2209e6</code></pre>
 
 <p>언젠가는 저장소를 손수 정리해야 할 날이 올지도 모른다. 저장소를 좀 더 꼼꼼하게(Compact) 하게 만들고, 다른 CVS에서 임포트하고 나서 그 잔재를 치운다든가, 아니면 문제가 생겨서 복구해야 할 수도 있다. 이 절은 이때 필요한 것을 설명한다.</p>
 
-<h3 id='id1357'>운영</h3>
+<h3 id='id740'>운영</h3>
 
 <p>Git은 때가 되면 자동으로 &#8220;auto gc&#8221; 명령을 실행한다. 물론 거의 실행되지 않는다. Loose 개체가 너무 많거나, Packfile 자체가 너무 많으면 Git은 그제야 진짜로 <code>git gc</code> 명령을 실행한다. <code>gc</code> 명령은 Garbage Collect하는 명령이다. 이 명령은 Loose 개체를 모아서 Packfile에 저장하거나 작은 Packfile을 모아서 하나의 큰 Packfile에 저장한다. 그리고 아무런 커밋도 가리키지 않는 개체가 있고 그 상태가 오래가면 그때 개체를 삭제한다.</p>
 
@@ -1180,7 +1180,7 @@ garbage: 0</code></pre>
 
 <p>압축된 저장소의 크기는 7K로 내려갔다. 2MB보다 한참 작다. 하지만, size 항목은 아직 압축되지 않는 Loose 개체의 크기를 나타내는데 그 항목이 아직 크다. 즉, 아직 완전히 제거된 것은 아니다. 하지만, 이 개체는 Push할 수도 Clone할 수도 없다. 이 점이 중요하다. 정말로 완전히 삭제하려면 <code>git prune --expire</code> 명령으로 삭제해야 한다.</p>
 
-<h2 id='id1358'>요약</h2>
+<h2 id='id741'>요약</h2>
 
 <p>Git이 내부적으로 어떻게 동작하는지 잘 이해하였으며 어떻게 구현됐는지까지 꽤 알게 됐을 것이다. 이 장은 저수준 명령어인 Plumbing 명령어들을 설명했다. 다른 장에서 우리가 배웠던 Porcelain 명령어보다는 단순하다. Git이 내부적으로 어떻게 동작하는지 알면 Git이 왜 그렇게 하는가를 더 쉽게 이해할 수 있을 뿐만 아니라 개인적으로 필요한 도구나 스크립트를 만들어 자신의 Workflow를 개선할 수 있다.</p>
 

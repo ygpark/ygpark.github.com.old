@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>S3C6410 USER's MANUAL - 박영기 BLOG</title>
+    <title>S3C6410 USERS MANUAL - 박영기 BLOG</title>
     <meta name="description" content="">
     <meta name="author" content="Young-Gi Park">
 
@@ -176,7 +176,7 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>S3C6410 USER's MANUAL </h1>
+  <h1>S3C6410 USERS MANUAL </h1>
 </div>
 
 <div class="row">
@@ -247,13 +247,13 @@
 
 <h2 id='113_block_diagram'>11.3 BLOCK DIAGRAM</h2>
 
-<p><img alt='Figure 11 DMAC block diagram' src='/images/s3c6410/figure-11-1-dma-block-diagram.png' /></p>
+<p><img src='/images/s3c6410/figure-11-1-dma-block-diagram.png' alt='Figure 11 DMAC block diagram' /></p>
 
 <h2 id='114_dma_sources'>11.4 DMA SOURCES</h2>
 
-<p>6410은 64개의 DMA source를 아래 테이블과 같이 지원한다. 시스템 컨트롤러에 있는 SDMA_SEL 레지스터의 리셋값은 <code>0x0</code> 이고, SDMA 선택이라는 의미이다. 그래서 설정은 일반적인 DMA를 사용하기위해서 1로 설정해한다. 더 많은 정보는 시스템 컨트롤러 파트를 참고하기 바란다.</p>
+<p>6410은 64개의 DMA source를 아래 테이블과 같이 지원한다. 시스템 컨트롤러에 있는 SDMA_SEL 레지스터의 리셋값은 <code>0x0</code> 이고, SDMA 선택이라는 의미이다. 그래서 설정은 일반적인 DMA를 사용하기위해서 1로 설정해한다. 더 많은 정보가 필요하면 시스템 컨트롤러 파트를 참고하라.</p>
 
-<p><img alt='figure-11-dma-source.png' src='/images/s3c6410/figure-11-dma-source.png' /></p>
+<p><img src='/images/s3c6410/figure-11-dma-source.png' alt='figure-11-dma-source.png' /></p>
 
 <h2 id='115_dma_interface'>11.5 DMA INTERFACE</h2>
 
@@ -309,13 +309,13 @@
 
 <p>전송을 위해서(burst 크기의 배수는 아니다) 표 11-2에서 처럼 burst와 single요청 신호가 사용된다.</p>
 
-<p><img alt='figure-11-2-p-to-m-transaction.png' src='/images/s3c6410/figure-11-2-p-to-m-transaction.png' /></p>
+<p><img src='/images/s3c6410/figure-11-2-p-to-m-transaction.png' alt='figure-11-2-p-to-m-transaction.png' /></p>
 
 <p>두 요청신호는</p>
 
-<p><img alt='figure-11-3-m-to-p-transaction.png' src='/images/s3c6410/figure-11-3-m-to-p-transaction.png' /></p>
+<p><img src='/images/s3c6410/figure-11-3-m-to-p-transaction.png' alt='figure-11-3-m-to-p-transaction.png' /></p>
 
-<p><img alt='figure-11-4-m-to-m-transaction.png' src='/images/s3c6410/figure-11-4-m-to-m-transaction.png' /> <img alt='figure-11-5-p-to-p-transaction.png' src='/images/s3c6410/figure-11-5-p-to-p-transaction.png' /></p>
+<p><img src='/images/s3c6410/figure-11-4-m-to-m-transaction.png' alt='figure-11-4-m-to-m-transaction.png' /> <img src='/images/s3c6410/figure-11-5-p-to-p-transaction.png' alt='figure-11-5-p-to-p-transaction.png' /></p>
   </div>
 </div>
 
