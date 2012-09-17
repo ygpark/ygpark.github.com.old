@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>리눅스 API의 모든 것 Vol.2 - 박영기 BLOG</title>
+    <meta name="description" content="">
+    <meta name="author" content="Young-Gi Park">
+
+    <META HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT"> 
+<!--
+    <META HTTP-EQUIV="Expires" CONTENT="-1"> 
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">박영기 BLOG</a>
+          <ul class="nav">
+            <li><a href="/atom.xml"><img src="/images/rss.gif"/></a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/categories.html">Categories</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/pages/documents.html">Documents</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+	<!--
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+
+
+ -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>리눅스 API의 모든 것 Vol.2 </h1>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <p>목차</p>
+
+<ol>
+<li><a href='/pages/linux_api_vol_2/00-readme.html'>README</a></li>
+
+<li><a href='/pages/linux_api_vol_2/01-thread-introduce.html'>스레드: 소개</a></li>
+
+<li><a href='/pages/linux_api_vol_2/02-thread-sync.html'>스레드: 스레드 동기화</a></li>
+
+<li><a href='/pages/linux_api_vol_2/03-thread-safety-and-repository.html'>스레드: 스레드 안전성과 스레드별 저장소</a></li>
+
+<li><a href='/pages/linux_api_vol_2/04-thread-cancel.html'>스레드: 스레드 취소</a></li>
+
+<li><a href='/pages/linux_api_vol_2/05-thread-details.html'>스레드: 기타 세부사항</a></li>
+
+<li><a href='/pages/linux_api_vol_2/06-ipc.html'>프로세스 간 통신 개요</a></li>
+
+<li><a href='/pages/linux_api_vol_2/07-pipe-fifo.html'>파이프와 FIFO</a></li>
+
+<li><a href='/pages/linux_api_vol_2/08-system-v-ipc.html'>시스템 V IPC 소개</a></li>
+
+<li><a href='/pages/linux_api_vol_2/09-system-v-message-queue.html'>시스템 V 메시지 큐</a></li>
+
+<li><a href='/pages/linux_api_vol_2/10-system-v-semaphore.html'>시스템 V 세마포어</a></li>
+
+<li><a href='/pages/linux_api_vol_2/11-system-v-shared-memory.html'>시스템 V 공유 메모리</a></li>
+
+<li><a href='/pages/linux_api_vol_2/12-memory-mapping.html'>메모리 매핑</a></li>
+
+<li><a href='/pages/linux_api_vol_2/13-virtual-memory-operation.html'>가상 메모리 오퍼레이션</a></li>
+
+<li><a href='/pages/linux_api_vol_2/14-posix-ipc.html'>POSIX IPC 소개</a></li>
+
+<li><a href='/pages/linux_api_vol_2/15-posix-message-queue.html'>POSIX 메시지 큐</a></li>
+
+<li><a href='/pages/linux_api_vol_2/16-posix-semaphore.html'>POSIX 세마포어</a></li>
+
+<li><a href='/pages/linux_api_vol_2/17-posix-shared-memory.html'>POSIX 공유 메모리</a></li>
+
+<li><a href='/pages/linux_api_vol_2/18-file-lock.html'>파일 잠금</a></li>
+
+<li><a href='/pages/linux_api_vol_2/19-socket-introduction.html'>소켓: 소개</a></li>
+
+<li><a href='/pages/linux_api_vol_2/20-socket-unix-domain.html'>소켓: 유닉스 도메인</a></li>
+
+<li><a href='/pages/linux_api_vol_2/21-socket-tcp-ip-network.html'>소켓: TCP/IP 네트워크 기초</a></li>
+
+<li><a href='/pages/linux_api_vol_2/22-socket-internet-domain.html'>소켓: 인터넷 도메인</a></li>
+
+<li><a href='/pages/linux_api_vol_2/23-socket-design-server.html'>소켓: 서버 설계</a></li>
+
+<li><a href='/pages/linux_api_vol_2/24-socket-advanced-option.html'>소켓: 고급 옵션</a></li>
+
+<li><a href='/pages/linux_api_vol_2/25-terminal.html'>터미널</a></li>
+
+<li><a href='/pages/linux_api_vol_2/26-alternative-io-model.html'>대체 I/O 모델</a></li>
+
+<li><a href='/pages/linux_api_vol_2/27-virtual-terminal.html'>가상 터미널</a></li>
+</ol>
+<hr />
+<h2 id='_'>스레드 소개</h2>
+
+<h2 id='id703'>개요</h2>
+
+<h2 id='_'>스레드 생성</h2>
+
+<h2 id='_'>스레드 종료</h2>
+
+<h2 id='_id'>스레드 ID</h2>
+
+<h2 id='__'>종료된 스레드와 조인하기</h2>
+
+<h2 id='_'>스레드 분리하기</h2>
+
+<h2 id='_'>스레드 속성</h2>
+
+<h2 id='__'>스레드와 프로세스의 비교</h2>
+
+<h2 id='id704'>정리</h2>
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Young-Gi Park 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

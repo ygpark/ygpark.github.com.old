@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>리눅스 API의 모든 것 Vol.1 - 박영기 BLOG</title>
+    <meta name="description" content="">
+    <meta name="author" content="Young-Gi Park">
+
+    <META HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT"> 
+<!--
+    <META HTTP-EQUIV="Expires" CONTENT="-1"> 
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">박영기 BLOG</a>
+          <ul class="nav">
+            <li><a href="/atom.xml"><img src="/images/rss.gif"/></a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/categories.html">Categories</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/pages/documents.html">Documents</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+	<!--
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+
+
+ -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>리눅스 API의 모든 것 Vol.1 </h1>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <p>목차</p>
+
+<ol>
+<li><a href='/pages/linux_api_vol_1/00-readme.html'>README</a></li>
+
+<li><a href='/pages/linux_api_vol_1/01-history-and-standard.html'>역사와 표준</a></li>
+
+<li><a href='/pages/linux_api_vol_1/02-general-idea.html'>기본 개념</a></li>
+
+<li><a href='/pages/linux_api_vol_1/03-general-idea-of-system-programming.html'>시스템 프로그래밍 개념</a></li>
+
+<li><a href='/pages/linux_api_vol_1/04-file-io-general-purpose-io-model.html'>파일 I/O: 범용 I/O 모델</a></li>
+
+<li><a href='/pages/linux_api_vol_1/05-file-io-more-details.html'>파일 I/O: 더 자세히</a></li>
+
+<li><a href='/pages/linux_api_vol_1/06-process.html'>프로세스</a></li>
+
+<li><a href='/pages/linux_api_vol_1/07-memory-allocation.html'>메모리 할당</a></li>
+
+<li><a href='/pages/linux_api_vol_1/08-user-and-group.html'>사용자와 그룹</a></li>
+
+<li><a href='/pages/linux_api_vol_1/09-process-authentication.html'>프로세스 자격증명</a></li>
+
+<li><a href='/pages/linux_api_vol_1/10-time.html'>시간</a></li>
+
+<li><a href='/pages/linux_api_vol_1/11-system-limit-and-option.html'>시스템 한도와 옵션</a></li>
+
+<li><a href='/pages/linux_api_vol_1/12-system-and-process-information.html'>시스템과 프로세스 정보</a></li>
+
+<li><a href='/pages/linux_api_vol_1/13-file-io-buffering.html'>파일 I/O 버퍼링</a></li>
+
+<li><a href='/pages/linux_api_vol_1/14-file-system.html'>파일 시스템</a></li>
+
+<li><a href='/pages/linux_api_vol_1/15-file-attribute.html'>파일 속성</a></li>
+
+<li><a href='/pages/linux_api_vol_1/16-expansion-attribute.html'>확장 속성</a></li>
+
+<li><a href='/pages/linux_api_vol_1/17-acl.html'>ACL</a></li>
+
+<li><a href='/pages/linux_api_vol_1/18-directory-and-link.html'>디렉토리와 링크</a></li>
+
+<li><a href='/pages/linux_api_vol_1/19-observe-file-event.html'>파일 이벤트 감시</a></li>
+
+<li><a href='/pages/linux_api_vol_1/20-signal-basic-concept.html'>시그널: 기본 개념</a></li>
+
+<li><a href='/pages/linux_api_vol_1/21-signal-signal-handler.html'>시그널: 시그널 핸들러</a></li>
+
+<li><a href='/pages/linux_api_vol_1/22-signal-advanced-functionality.html'>시그널: 고급 기능</a></li>
+
+<li><a href='/pages/linux_api_vol_1/23-timer-and-sleep.html'>타이머와 수면</a></li>
+
+<li><a href='/pages/linux_api_vol_1/24-process-creation.html'>프로세스 생성</a></li>
+
+<li><a href='/pages/linux_api_vol_1/25-process-termination.html'>프로세스 종료</a></li>
+
+<li><a href='/pages/linux_api_vol_1/26-observe-child-process.html'>자식 프로세스 감시</a></li>
+
+<li><a href='/pages/linux_api_vol_1/27-execute-program.html'>프로그램 실행</a></li>
+
+<li><a href='/pages/linux_api_vol_1/28-beyond-process-creation-and-program-execution.html'>더 자세히 살펴보는 프로세스 생성과 프로그램 실행</a></li>
+
+<li><a href='/pages/linux_api_vol_1/29-process-group-session-work-flow-control.html'>프로세스 그룹, 세션, 작업 제어</a></li>
+
+<li><a href='/pages/linux_api_vol_1/30-process-priority-and-scheduling.html'>프로세스 우선순위와 스케줄링</a></li>
+
+<li><a href='/pages/linux_api_vol_1/31-process-resource.html'>프로세스 자원</a></li>
+
+<li><a href='/pages/linux_api_vol_1/32-deamon.html'>데몬</a></li>
+
+<li><a href='/pages/linux_api_vol_1/33-write-safe-privilege-program.html'>안전한 특권 프로그램 작성</a></li>
+
+<li><a href='/pages/linux_api_vol_1/34-ability.html'>능력</a></li>
+
+<li><a href='/pages/linux_api_vol_1/35-login-account.html'>로그인 계정</a></li>
+
+<li><a href='/pages/linux_api_vol_1/36-shared-library-basic.html'>공유 라이브러리 기초</a></li>
+
+<li><a href='/pages/linux_api_vol_1/37-shared-library-advanced-functionality.html'>공유 라이브러리의 고급 기능</a></li>
+</ol>
+<hr />
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Young-Gi Park 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+
