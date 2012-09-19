@@ -42,6 +42,11 @@ description: ""
 
 [리눅스 API의 모든 것 Vol.2](http://www.acornpub.co.kr/book/linux-api-vol2)를 읽고 개인적인 생각을 정리하기 위하여 이 문서를 남깁니다.
 
+##HISTORY
+
+- 2012-09-17 리뷰를 위한 페이지를 만들었습니다.
+- 2012-09-18 '스레드: 소개'의 리뷰가 완료되었습니다.
+
 ##글쓴이
 
 박영기(Young-Gi Park) ghostyak@gmail.com

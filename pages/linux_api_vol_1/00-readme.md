@@ -47,3 +47,14 @@ description: ""
 1. [공유 라이브러리의 고급 기능](/pages/linux_api_vol_1/37-shared-library-advanced-functionality.html)
 
 <hr/>
+##README
+
+[리눅스 API의 모든 것 Vol.1](http://www.acornpub.co.kr/book/linux-api-vol1)를 읽고 개인적인 생각을 정리하기 위하여 이 문서를 남깁니다.
+
+##HISTORY
+
+- 2012-09-17 리뷰를 위한 페이지를 만들었습니다.
+
+##글쓴이
+
+박영기(Young-Gi Park) ghostyak@gmail.com
