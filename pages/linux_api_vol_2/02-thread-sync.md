@@ -160,10 +160,12 @@ description: ""
 	int pthread_mutex_trylock(pthread_mutex_t *mutex);
 	
 			성공하면 0을 리턴하고 에러가 발생하면 에러 번호(양수)를 리턴한다.
+
 .
+
 	#include <pthread.h>
 	#include <time.h>
-
+	
 	int pthread_mutex_timedlock(pthread_mutex_t *restrict mutex,
 	const struct timespec *restrict abs_timeout);
 	

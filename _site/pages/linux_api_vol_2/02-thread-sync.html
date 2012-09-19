@@ -622,11 +622,12 @@ int pthread_mutex_trylock(pthread_mutex_t *mutex);
 
 		성공하면 0을 리턴하고 에러가 발생하면 에러 번호(양수)를 리턴한다.</code></pre>
 
-<p>. #include <pre style='border: solid 3px red; background-color: pink' class='markdown-html-error'>REXML could not parse this XML/HTML: 
-&lt;pthread.h&gt;
-	#include &lt;time.h&gt;</pre></p>
+<p>.</p>
 
-<pre><code>int pthread_mutex_timedlock(pthread_mutex_t *restrict mutex,
+<pre><code>#include &lt;pthread.h&gt;
+#include &lt;time.h&gt;
+
+int pthread_mutex_timedlock(pthread_mutex_t *restrict mutex,
 const struct timespec *restrict abs_timeout);
 
 		성공하면 0을 리턴하고 에러가 발생하면 에러 번호(양수)를 리턴한다.</code></pre>
