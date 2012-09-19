@@ -84,7 +84,7 @@ description: ""
 	glob: 112098 
 
 
-##2.1.1 정적으로 할당한 뮤텍스
+###2.1.1 정적으로 할당한 뮤텍스
 
 뮤텍스를 정적으로 초기화 하는 방법은 다음과 같다. 동적으로 초기화 할수도 있는데 2.1.5절에서 다룬다.
 
@@ -92,7 +92,7 @@ description: ""
 
 
 
-##2.1.2 뮤텍스의 잠금과 풀림
+###2.1.2 뮤텍스의 잠금과 풀림
 
 	#include <pthread.h>
 
@@ -179,13 +179,200 @@ pthread_mutex_timedlock()함수는 호출자가 뮤텍스 잠금을 획득하려
 
 대부분의 잘 설계된 응용 프로그램에서는 뮤텍스가 짧은 시간동안만 잠근다. 그러므로 pthread_mutex_trylock()와 pthread_mutex_timedlock()가 필요한 상황이 생기면 설계가 올바로 되어있나 검토해 볼 필요가 있다. 
 
-##2.1.3 뮤텍스의 성능
-
-뮤텍스의 성능은 대체로 빠른 편에 속한다.
-
-
-##2.1.4 뮤텍스 데드락
 
 
 
+###2.1.3 뮤텍스의 성능
+
+뮤텍스의 성능은 대체로 빠른 편에 속한다. 리눅스에서는 퓨텍스(futex, fast user space mutex)로 구현되어있고, 잠금 경합은 futex() 시스템 호출로 처리한다.
+
+
+###2.1.4 뮤텍스 데드락
+
+####두 스레드가 두 뮤텍스를 잠글 때의 데드락
+
+<table border="1px">
+
+<tr>
+	<td>스레드 A</td>
+	<td>스레드B</td>
+</tr>
+
+<tr>
+	<td>
+		1. pthread_mutex_lock(mutex1); <br/>
+		2. pthread_mutex_lock(mutex2);
+	</td>
+	<td>
+		1. pthread_mutex_lock(mutex2); <br/>
+		2. pthread_mutex_lock(mutex1);
+</td>
+</tr>
+</table>
+
+
+
+####데드락을 피하는 방법
+
+<ol>
+	<li>같은 스레드군을 잠글 때에는 같은 순서로 뮤텍스를 잠근다. (예를들어, mutex1을 잠근 다음 mutex2를 잠근다)</li>
+	<li>pthread_mutex_lock()으로 잠근 다음, 나머지 뮤텍스를 pthread_mutex_trylock()으로 잠근다. 이 방법은 잠금서열을 정하는 것 보다 덜 효율적이다.</li>
+</ol>
+
+
+
+###2.1.5 뮤텍스를 동적으로 초기화하기
+
+	#include <pthread.h>
+	
+	int pthread_mutex_init(pthread_mutex_t *restrict mutex,
+	                       const pthread_mutexattr_t *restrict attr);
+	
+			성공하면 0을 리턴하고 에러가 발생하면 에러 번호(양수)를 리턴한다.
+
+attr을 NULL로 지정하면 기본 속성이 적용된다.
+
+	#include <pthread.h>
+	
+	int pthread_mutex_destroy(pthread_mutex_t *mutex);
+	
+			성공하면 0을 리턴하고 에러가 발생하면 에러 번호(양수)를 리턴한다.
+
+더이상 필요없으면 pthread_mutex_destroy()로 제거해야한다. 제거된 뮤텍스는 pthread_mutex_init()으로 다시 재사용할 수 있다. 
+
+
+
+
+##2.1.6 뮤텍스 속성
+
+생략
+
+
+
+###2.1.7 뮤텍스의 종류
+
+<ul>
+	<li>하나의 스레드는 같은 뮤텍스를 두 번 잠그면 안된다.</li>
+	<li>스레드는 자신이 소유하지 않은(즉 자신이 잠그지 않은) 뮤텍스를 풀면 안된다.</li>
+	<li>스레드는 현재 잠겨있지 않은 뮤텍스를 풀면 안된다.</li>
+</ul>
+
+뮤텍스를 사용할 때 하지말아야 할 것들이다. 각각의 경우 무슨일이 생길지는 뮤텍스의 종류에 따라 다르다.
+
+<ul>
+	<li>PTHREAD_MUTEX_NORMAL: 기본값. 위 시나리오에서 알 수 없는 결과가 생긴다.</li>
+	<li>PTHREAD_MUTEX_ERRORCHECK: 모든 오퍼레이션에 대해 에러 검사가 수행된다. 위 세가지 시나리오에서 에러값이 리턴된다. 디버그 도구로 사용할 수 있다.</li>
+	<li>PTHREAD_MUTEX_RECURSIVE: 잠금 카운트가 적용된 재귀적 뮤텍스. 한 스레드 내에서 뮤텍스가 여러번 잠길 수 있고 카운트가 1씩 증가한다. 잠금이 해제될 때 마다 카운트가 1씩 감소하며 0이되면 해제된다.</li>
+</ul>
+
+디버그용으로 사용하면 좋을 것 같은 예제를 인용한다. 에러체크는 생략한다.
+
+	  1 pthread_mutex_t mtx;
+	  2 pthread_mutexattr_t mtxAttr;
+	  3 int s, type;
+	  4 
+	  5 pthread_mutex_attr_init(&mtxAttr);
+	  6 
+	  7 pthread_mutexattr_settype(&mtxAttr, PTHREAD_MUTEX_ERRORCHECK);
+	  8 
+	  9 pthread_muteX_init(&mtx, &mtxAttr);
+	 10 
+	 11 pthread_muteXattr_destroy(&mtxAttr);
+
+	 
+	 
+##2.2 상태 변화 알리기: 조건변수
+
+이번에는 조건변수를 알 수 있는 예만 알아보고 가겠다. 마찬가지로 에러처리는 생략한다.
+
+
+
+
+###2.2.1 정적으로 할당된 조건 변수
+
+	#include <pthread.h>
+	
+	pthread_cont_t cond = PTHREAD_COND_INITIALIZER;
+
+
+###2.2.2 조건 변수를 이용한 대기와 시그널
+
+	#include <pthread.h>
+	
+	int pthread_cond_broadcast(pthread_cond_t *cond);
+	int pthread_cond_signal(pthread_cond_t *cond); 
+	
+			성공하면 0을 리턴하고 에러가 발생하면 에러 번호(양수)를 리턴한다.
+.
+
+	#include <pthread.h>
+	
+	int pthread_cond_timedwait(pthread_cond_t *restrict cond,
+	                           pthread_mutex_t *restrict mutex,
+	                           const struct timespec *restrict abstime);
+	int pthread_cond_wait(pthread_cond_t *restrict cond,
+	                      pthread_mutex_t *restrict mutex);
+	
+			성공하면 0을 리턴하고 에러가 발생하면 에러 번호(양수)를 리턴한다.
+
+
+####생산자-소비자 예제
+
+생산자 코드
+
+	  1 pthread_mutex_lock(&mtx);
+	  2 
+	  3 avail++;
+	  4 
+	  5 pthread_mutex_unlock(&mtx); 
+	  6 
+	  7 pthread_cond_signal(&cond); /*5번째 줄과 바꿔쓸 수 있다. */
+
+소비자 코드
+
+	  1 pthread_mutex_lock(&mtx);
+	  2 
+	  3 while(avail==0)                     /* if문이 아닌 while문을 써야 안전하다. */
+	  4 	pthread_cond_wait(&cond, &mtx); /* 흥미로운것은 이 줄에서 뮤텍스가 자동으로 풀린다는 것이다. */
+	  5 
+	  6 /* 작업을 수행한다. */
+	  7 
+	  8 pthread_mutex_unlock(&mtx);
+
+소비자 코드의 3번째 줄에서 while문을 써야하는 이유는 드물게 시스템이 잘못 깨울 수도 있기 때문이다. (SUSv3에 명시되어 있다고 한다.)
+
+
+
+###2.2.3 조건 변수의 조건문 검사하기
+
+생략
+
+
+
+###2.2.4 예제 프로그램: 종료하는 모든 스레드와 조인하기
+
+생략 (그냥 재미있는 시도를 하는 예제였을 뿐..)
+
+
+###2.2.5 동적으로 할당된 조건 변수
+
+	#include <pthread.h>
+	
+	int pthread_cond_init(pthread_cond_t *restrict cond,
+	                      const pthread_condattr_t *restrict attr);
+	
+			성공하면 0을 리턴하고 에러가 발생하면 에러 번호(양수)를 리턴한다.
+
+attr이 NULL이면 기본값이 적용된다.
+
+	#include <pthread.h>
+	
+	int pthread_cond_destroy(pthread_cond_t *cond);
+	
+			성공하면 0을 리턴하고 에러가 발생하면 에러 번호(양수)를 리턴한다.
+
+
+##2.4 연습문제
+
+생략
 
